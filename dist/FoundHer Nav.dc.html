@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@200;300;400;500;600;700&family=Yellowtail&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+  body{margin:0;}
+  :root{
+    --espresso:#c36a4e; --espresso-2:#b65a3e; --deep:#984b34;
+    --clay:#b65a3e; --clay-2:#c36a4e; --coral:#c36a4e;
+    --cream:#ffefdd; --blush:#fbe7d2; --peach:#fed5a7; --sand:#f7e3cc; --card:#fff8ee;
+    --ink:#3a1f16; --muted:#8a6f5e; --on-dark:#ffefdd; --on-dark-muted:#e6c7ad;
+    --line:#f0dcc6; --line-dark:rgba(255,239,221,.15);
+    --font-display:'Baloo 2',system-ui,sans-serif;
+    --font-slab:'Zilla Slab',Georgia,serif;
+    --font-body:'Montserrat',system-ui,sans-serif;
+    --font-script:'Yellowtail',cursive;
+    --disp-wt:800; --disp-tr:-0.01em; --radius:18px; --maxw:1180px;
+  }
+  :root[data-theme="editorial"]{ --font-display:'Zilla Slab',Georgia,serif; --disp-wt:700; --disp-tr:-0.005em; --radius:4px; }
+  :root[data-theme="modern"]{ --font-display:'Montserrat',system-ui,sans-serif; --disp-wt:800; --disp-tr:-0.025em; --radius:10px; }
+  [data-mobtoggle]{display:none;}
+  @media(max-width:880px){ [data-desknav]{display:none!important;} [data-mobtoggle]{display:inline-flex!important;} }
+  a{color:inherit;}
+</style>
+</helmet>
+
+<div style="font-family:var(--font-body);">
+  <header style="position:sticky;top:0;z-index:60;background:rgba(195,106,78,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--line-dark);">
+    <div style="max-width:var(--maxw);margin:0 auto;padding:15px 26px;display:flex;align-items:center;justify-content:space-between;gap:20px;">
+      <a href="index.html" onClick="{{ closeNav }}" style="display:flex;align-items:center;text-decoration:none;">
+        <img src="assets/foundher-logo.png" alt="Hawai&#699;i FoundHer" style="height:38px;width:auto;display:block;">
+      </a>
+      <nav data-desknav style="display:flex;align-items:center;gap:34px;font-size:14.5px;font-weight:500;color:var(--on-dark);">
+        <a href="program.html" style="{{ programStyle }}">The Program</a>
+        <a href="ohana.html" style="{{ ohanaStyle }}">Our &#699;Ohana</a>
+        <a href="faqs.html" style="{{ faqStyle }}">FAQs</a>
+        <a href="contact.html" style="{{ contactStyle }}">Contact</a>
+        <a href="https://secure.givelively.org/donate/foundher/building-businesses-that-build-community" target="_blank" rel="noopener" style="text-decoration:none;background:var(--peach);color:#3a1f16;font-weight:700;padding:11px 22px;border-radius:999px;font-family:var(--font-display);white-space:nowrap;">Donate Now</a>
+      </nav>
+      <button data-mobtoggle onClick="{{ toggleNav }}" aria-label="Menu" style="background:transparent;border:1px solid var(--line-dark);color:var(--on-dark);width:44px;height:44px;border-radius:12px;align-items:center;justify-content:center;cursor:pointer;font-size:20px;">&#9776;</button>
+    </div>
+    <sc-if value="{{ navOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="background:var(--espresso);border-top:1px solid var(--line-dark);padding:8px 26px 22px;display:flex;flex-direction:column;gap:4px;">
+        <a href="program.html" onClick="{{ closeNav }}" style="text-decoration:none;color:var(--on-dark);padding:13px 4px;border-bottom:1px solid var(--line-dark);font-size:16px;">The Program</a>
+        <a href="ohana.html" onClick="{{ closeNav }}" style="text-decoration:none;color:var(--on-dark);padding:13px 4px;border-bottom:1px solid var(--line-dark);font-size:16px;">Our &#699;Ohana</a>
+        <a href="faqs.html" onClick="{{ closeNav }}" style="text-decoration:none;color:var(--on-dark);padding:13px 4px;border-bottom:1px solid var(--line-dark);font-size:16px;">FAQs</a>
+        <a href="contact.html" onClick="{{ closeNav }}" style="text-decoration:none;color:var(--on-dark);padding:13px 4px;border-bottom:1px solid var(--line-dark);font-size:16px;">Contact</a>
+        <a href="https://secure.givelively.org/donate/foundher/building-businesses-that-build-community" target="_blank" rel="noopener" onClick="{{ closeNav }}" style="text-decoration:none;margin-top:12px;text-align:center;background:var(--peach);color:#3a1f16;font-weight:700;padding:13px;border-radius:999px;font-family:var(--font-display);">Donate Now</a>
+      </div>
+    </sc-if>
+  </header>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:80},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;program&quot;,&quot;ohana&quot;,&quot;faqs&quot;,&quot;contact&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { theme: 'modern', navOpen: false };
+  }
+  componentDidMount() {
+    this.apply('modern');
+  }
+  apply(th) { try { document.documentElement.dataset.theme = th; } catch (e) {} }
+  componentDidUpdate() { this.apply(this.state.theme); }
+  setTheme(t) { try { localStorage.setItem('fh-theme', t); } catch (e) {} this.setState({ theme: t, navOpen: false }); }
+  swStyle(active) {
+    const base = 'font-family:var(--font-display);font-weight:700;font-size:13px;border:0;cursor:pointer;padding:8px 15px;border-radius:999px;';
+    return base + (active ? 'background:var(--clay);color:#fff;' : 'background:transparent;color:var(--on-dark-muted);');
+  }
+  renderVals() {
+    const t = this.state.theme;
+    const active = this.props.active || 'home';
+    const base = 'text-decoration:none;color:var(--on-dark);';
+    const act = 'text-decoration:none;color:#fff;border-bottom:2px solid var(--peach);padding-bottom:3px;';
+    return {
+      navOpen: this.state.navOpen,
+      toggleNav: () => this.setState(s => ({ navOpen: !s.navOpen })),
+      closeNav: () => this.setState({ navOpen: false }),
+      setWarm: () => this.setTheme('warm'),
+      setEditorial: () => this.setTheme('editorial'),
+      setModern: () => this.setTheme('modern'),
+      swWarm: this.swStyle(t === 'warm'),
+      swEditorial: this.swStyle(t === 'editorial'),
+      swModern: this.swStyle(t === 'modern'),
+      programStyle: active === 'program' ? act : base,
+      ohanaStyle: active === 'ohana' ? act : base,
+      faqStyle: active === 'faqs' ? act : base,
+      contactStyle: active === 'contact' ? act : base,
+    };
+  }
+}
+</script>
+</body>
+</html>

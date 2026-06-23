@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html data-theme="modern">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@200;300;400;500;600;700&family=Yellowtail&display=swap" rel="stylesheet">
+<script src="image-slot.js"></script>
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+  body{margin:0;}
+  :root{
+    --espresso:#c36a4e; --espresso-2:#b65a3e; --deep:#984b34;
+    --clay:#b65a3e; --clay-2:#c36a4e; --coral:#c36a4e;
+    --cream:#ffefdd; --blush:#fbe7d2; --peach:#fed5a7; --sand:#f7e3cc; --card:#fff8ee;
+    --ink:#3a1f16; --muted:#8a6f5e; --on-dark:#ffefdd; --on-dark-muted:#e6c7ad;
+    --line:#f0dcc6; --line-dark:rgba(255,239,221,.15);
+    --font-display:'Baloo 2',system-ui,sans-serif;
+    --font-slab:'Zilla Slab',Georgia,serif;
+    --font-body:'Montserrat',system-ui,sans-serif;
+    --font-script:'Yellowtail',cursive;
+    --disp-wt:800; --disp-tr:-0.01em; --radius:18px; --maxw:1180px;
+    --tex-clay:url('assets/texture-clay.jpg');
+    --tex-cream:url('assets/texture-cream.jpg');
+    --tex-coral:url('assets/texture-coral.jpg');
+  }
+  :root[data-theme="editorial"]{ --font-display:'Zilla Slab',Georgia,serif; --disp-wt:700; --disp-tr:-0.005em; --radius:4px; }
+  :root[data-theme="modern"]{ --font-display:'Montserrat',system-ui,sans-serif; --disp-wt:800; --disp-tr:-0.025em; --radius:10px; }
+  ::selection{background:var(--clay);color:#fff;}
+  @media(max-width:640px){ [data-sec]{padding-top:62px!important;padding-bottom:62px!important;} [data-hero]{padding-top:48px!important;padding-bottom:64px!important;} }
+  a{color:inherit;}
+  image-slot{display:block;width:100%;height:100%;}
+</style>
+</helmet>
+
+<div style="font-family:var(--font-body);color:var(--ink);background:var(--cream);overflow-x:hidden;">
+
+  <dc-import name="FoundHer Nav" active="ohana" hint-size="100%,72px"></dc-import>
+
+  <!-- HERO -->
+  <section data-hero data-sec style="background:linear-gradient(rgba(120,52,34,.48),rgba(120,52,34,.68)),var(--tex-coral);background-size:cover;background-position:center;color:#fff;padding:104px 0;">
+    <div style="max-width:var(--maxw);margin:0 auto;padding:0 26px;">
+      <p style="font-family:var(--font-slab);text-transform:uppercase;letter-spacing:.26em;font-size:13px;font-weight:600;color:rgba(255,255,255,.85);margin:0 0 20px;">Our &#699;Ohana</p>
+      <h1 style="font-family:var(--font-display);font-weight:var(--disp-wt);letter-spacing:var(--disp-tr);font-size:clamp(36px,5.4vw,68px);line-height:1.0;margin:0;max-width:18ch;">24 companies. 950+ applications. One thing in common.</h1>
+      <p style="font-family:var(--font-script);font-size:clamp(28px,4vw,46px);margin:18px 0 0;color:var(--peach);">W&#257;hine who refused to wait.</p>
+    </div>
+  </section>
+
+  <!-- WHY WAHINE -->
+  <section data-sec style="background:var(--cream);padding:88px 0;">
+    <div style="max-width:var(--maxw);margin:0 auto;padding:0 26px;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;align-items:center;margin:0 0 44px;">
+        <image-slot id="fh-ohana-why" shape="rounded" radius="18" placeholder="Drop a photo" style="aspect-ratio:4/3;width:100%;box-shadow:0 18px 44px -28px rgba(58,31,22,.5);"></image-slot>
+        <p style="font-size:18px;line-height:1.6;color:var(--ink);margin:0;font-weight:400;text-align:left;">The data is clear: women-led businesses aren&#700;t just good for families, they&#700;re good for economies. FoundHer companies don&#700;t just survive, they grow, they hire, and they reinvest in the communities they call home.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;">
+        <sc-for list="{{ ohanaStats }}" as="o" hint-placeholder-count="4">
+          <div style="background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;">
+            <div style="font-family:var(--font-display);font-weight:800;font-size:clamp(36px,5vw,48px);line-height:1;color:var(--clay);">{{ o.v }}</div>
+            <div style="font-size:14px;color:var(--muted);margin-top:12px;font-weight:400;line-height:1.45;">{{ o.l }}</div>
+          </div>
+        </sc-for>
+      </div>
+      <p style="font-family:var(--font-slab);font-style:italic;font-size:clamp(19px,2.4vw,26px);line-height:1.45;color:var(--ink);max-width:70ch;margin:46px auto 0;text-align:center;">&ldquo;Women entrepreneurs build differently. They hire locally, source ethically, reinvest in their communities, and build enterprises designed to last. When w&#257;hine thrive, whole communities thrive with them.&rdquo;</p>
+    </div>
+  </section>
+
+  <!-- COMMUNITY -->
+  <section data-sec style="background:var(--blush);padding:92px 0;">
+    <div style="max-width:var(--maxw);margin:0 auto;padding:0 26px;">
+      <p style="font-family:var(--font-slab);text-transform:uppercase;letter-spacing:.2em;font-size:13px;font-weight:700;color:var(--clay);margin:0 0 30px;">Our Community</p>
+      <sc-for list="{{ cohorts }}" as="ch" hint-placeholder-count="3">
+        <div style="margin-bottom:38px;">
+          <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;border-bottom:2px solid var(--clay);padding-bottom:10px;margin-bottom:16px;">
+            <span style="font-family:var(--font-display);font-weight:800;font-size:18px;color:var(--ink);">{{ ch.label }}</span>
+            <span style="font-family:var(--font-slab);font-size:13px;color:var(--clay);font-weight:600;letter-spacing:.04em;text-transform:uppercase;">{{ ch.sub }}</span>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:6px 30px;">
+            <sc-for list="{{ ch.companies }}" as="co" hint-placeholder-count="5">
+              <div style="padding:11px 0;border-bottom:1px solid rgba(182,90,62,.16);">
+                <sc-if value="{{ co.url }}" hint-placeholder-val="{{ false }}">
+                  <a href="{{ co.url }}" target="_blank" rel="noopener" style="font-family:var(--font-display);font-weight:700;font-size:15.5px;color:var(--clay);text-decoration:none;" style-hover="text-decoration:underline">{{ co.name }}</a>
+                </sc-if>
+                <sc-if value="{{ co.noUrl }}" hint-placeholder-val="{{ true }}">
+                  <div style="font-family:var(--font-display);font-weight:700;font-size:15.5px;color:var(--ink);">{{ co.name }}</div>
+                </sc-if>
+                <div style="font-size:13px;color:var(--muted);margin-top:2px;">{{ co.meta }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS + VIDEO -->
+  <section data-sec style="background:var(--cream);padding:88px 0;">
+    <div style="max-width:var(--maxw);margin:0 auto;padding:0 26px;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;">
+        <sc-for list="{{ ohanaQuotes }}" as="q" hint-placeholder-count="3">
+          <div style="background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px;">
+            <p style="font-style:italic;font-family:var(--font-slab);font-size:16px;line-height:1.55;color:var(--ink);margin:0 0 16px;">&ldquo;{{ q.quote }}&rdquo;</p>
+            <p style="margin:0;font-weight:700;font-family:var(--font-display);color:var(--clay);font-size:15px;">{{ q.who }} <span style="color:var(--muted);font-weight:400;font-family:var(--font-body);">&middot; {{ q.biz }}</span></p>
+          </div>
+        </sc-for>
+      </div>
+      <p style="font-family:var(--font-slab);text-transform:uppercase;letter-spacing:.2em;font-size:13px;font-weight:700;color:var(--clay);margin:48px 0 18px;">Cohort 4 H&#333;&#699;ike Recap</p>
+      <a href="https://www.youtube.com/watch?v=E8LFghgqRyc" target="_blank" rel="noopener" style="position:relative;display:block;width:100%;border-radius:var(--radius);overflow:hidden;box-shadow:0 24px 60px -30px rgba(0,0,0,.4);aspect-ratio:16/9;background:#000;text-decoration:none;">
+        <img src="https://img.youtube.com/vi/E8LFghgqRyc/maxresdefault.jpg" alt="Cohort 4 H&#333;&#699;ike Recap" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <span style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(40,21,16,.22);" style-hover="background:rgba(40,21,16,.34)">
+          <span style="width:78px;height:78px;border-radius:50%;background:rgba(182,90,62,.95);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 28px rgba(0,0,0,.45);">
+            <span style="width:0;height:0;border-left:24px solid #fff;border-top:14px solid transparent;border-bottom:14px solid transparent;margin-left:6px;"></span>
+          </span>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <dc-import name="FoundHer Footer" hint-size="100%,380px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  renderVals() {
+    const vals = {
+      ohanaStats: [
+        { v: '+41%', l: 'Median revenue growth in Year 1' },
+        { v: '88%', l: 'Business survival rate: 23 pts above the national average' },
+        { v: '73', l: 'W-2 jobs created: 71% held by Native Hawaiians' },
+        { v: '149', l: 'New wholesale accounts opened by alumni' },
+      ],
+      cohorts: [
+        { label: 'Kapalili Cohort 1', sub: '2026 (Current) · Hawaiʻi Island Agriculture & Food', companies: [
+          { name: 'Small Batch HI', meta: 'Food Systems · Big Island' },
+          { name: '808 Greens n Things', meta: 'Food Systems · Big Island', url: 'https://www.808greens.com/' },
+          { name: 'Kahuaola Farms', meta: 'Food Systems · Big Island' },
+          { name: 'Ko Kawai Lei', meta: 'Food Systems · Big Island', url: 'https://kokawailei.com/' } ] },
+        { label: 'Cohort 5', sub: '2026 (Current)', companies: [
+          { name: 'Hawaiʻi STEM Labs', meta: 'Tech · Oʻahu', url: 'https://www.hawaiistemlabs.com/' },
+          { name: 'Sharai Swimwear', meta: 'Fashion · Oʻahu', url: 'https://sharaiswim.com/' },
+          { name: 'Henōhea', meta: 'Fashion · Maui', url: 'https://henohea.com/' },
+          { name: 'Malia and Co. Apparel', meta: 'Fashion · Maui', url: 'https://maliaandcompany.com/' },
+          { name: 'LF Farms', meta: 'Food Systems · Maui', url: 'https://www.instagram.com/lf_farms_llc/' },
+          { name: 'LiuLiu Farms', meta: 'Food Systems · Oʻahu', url: 'https://www.instagram.com/liuliu_farms/' },
+          { name: 'Evōlve Health and Fitness', meta: 'Health & Wellness · Big Island', url: 'https://www.instagram.com/evolve_health_fitness/' } ] },
+        { label: 'Cohort 4', sub: '2025', companies: [
+          { name: 'Waʻa Collective', meta: 'Health & Wellness · Oʻahu', url: 'https://waacollective.com/' },
+          { name: 'For Simple Sustainability', meta: 'Fashion · Oʻahu', url: 'https://www.for-simplesustainability.com/' },
+          { name: 'Three Little Ducks', meta: 'Keiki & Education · Oʻahu', url: 'https://threelittleduckshawaii.com/' },
+          { name: 'Guava Jammies', meta: 'Fashion · Oʻahu', url: 'https://guavajammies.com/' },
+          { name: 'Kāholo', meta: 'Fashion · Oʻahu', url: 'https://www.kaholohawaii.com/' },
+          { name: 'Big Island Smokehouse', meta: 'Food Systems · Big Island', url: 'https://www.bigislandsmokehouse.co/' },
+          { name: 'Kuahine and Co', meta: 'Health & Wellness · Big Island', url: 'https://www.kuahineco.com/' } ] },
+        { label: 'Cohort 3', sub: '2024', companies: [
+          { name: 'Kain Cuisine', meta: 'Food Systems · Big Island', url: 'https://www.instagram.com/kain.pasta/' },
+          { name: 'Lanaʻi Game Packaging', meta: 'Food Systems · Lānaʻi', url: 'https://www.lanaigamepackaging.com/' },
+          { name: 'Hawaiian Vinegar and Spice', meta: 'Food Systems · Oʻahu', url: 'https://www.hawaiianvinegarco.com/' },
+          { name: 'Kaulana Mahina', meta: 'Keiki & Education · Big Island', url: 'https://kaulanamahina.com/' },
+          { name: 'Kaʻae Farms', meta: 'Food Systems · Big Island', url: 'https://www.kaaefarm.com/' },
+          { name: 'Itsy Bitsy Keiki', meta: 'Keiki & Education · Maui', url: 'https://itsybitsykeiki.com/' },
+          { name: 'Wailua Granola', meta: 'Food Systems · Kauaʻi', url: 'https://wailuagranolaco.com/' } ] },
+        { label: 'Cohort 2', sub: '2022–2023', companies: [
+          { name: 'Kamuela Gourmet', meta: 'Food Systems · Big Island', url: 'https://kamuelagourmet.com/' },
+          { name: 'Island Swim', meta: 'Fashion · Big Island', url: 'https://www.islandswimhawaii.com/' },
+          { name: 'Haʻa and Co', meta: 'Fashion · Kauaʻi', url: 'https://haaandco.com/' },
+          { name: 'Epik Style', meta: 'Fashion · Molokaʻi', url: 'https://www.instagram.com/epik_style/' },
+          { name: 'Iwi Nails', meta: 'Fashion · Molokaʻi', url: 'https://iwinails.com/' } ] },
+        { label: 'Cohort 1', sub: '2021–2022', companies: [
+          { name: 'Onomea Farm Hub', meta: 'Food Systems · Big Island', url: 'https://www.onomeahub.com/' },
+          { name: 'Waimea Herb Company', meta: 'Food Systems · Big Island', url: 'https://www.waimeaherbco.com/' },
+          { name: 'ʻĀina Organics', meta: 'Health & Wellness · Kauaʻi', url: 'https://ainaorganics.com/' },
+          { name: 'Kōkua Diaper', meta: 'Keiki & Education · Maui', url: 'https://www.instagram.com/kokuadiaper/' },
+          { name: 'Polipoli Farms', meta: 'Food Systems · Maui', url: 'https://www.polipolifarms.com/' } ] },
+      ],
+      ohanaQuotes: [
+        { quote: 'The $4,000 ʻOhana Care stipend from Hawaiʻi FoundHer has been a tremendous support for our growing family. It allowed us to secure reliable childcare while we participated in our first Merrie Monarch, a major milestone for our small business.', who: 'Steffy Simms', biz: 'Guava Jammies' },
+        { quote: "It has been a joy, and an honor and a privilege being in the FoundHer Program. I have grown as a person and as a Founder. I've learned a lot but I have made friends, which is invaluable.", who: 'Dore Centeio', biz: 'Kamuela Gourmet' },
+        { quote: 'The child care stipend helped me care for my two keiki by easing the financial stress of paying for safe, reliable child care. That support made it possible for me to focus on building a better future for all of us.', who: 'Noelani Sagapolutele', biz: 'Waʻa Collective' },
+      ],
+    };
+    vals.cohorts.forEach(c => c.companies.forEach(co => { co.noUrl = !co.url; }));
+    return vals;
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html data-theme="modern">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@200;300;400;500;600;700&family=Yellowtail&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+  body{margin:0;}
+  :root{
+    --espresso:#c36a4e; --espresso-2:#b65a3e; --deep:#984b34;
+    --clay:#b65a3e; --clay-2:#c36a4e; --coral:#c36a4e;
+    --cream:#ffefdd; --blush:#fbe7d2; --peach:#fed5a7; --sand:#f7e3cc; --card:#fff8ee;
+    --ink:#3a1f16; --muted:#8a6f5e; --on-dark:#ffefdd; --on-dark-muted:#e6c7ad;
+    --line:#f0dcc6; --line-dark:rgba(255,239,221,.15);
+    --font-display:'Baloo 2',system-ui,sans-serif;
+    --font-slab:'Zilla Slab',Georgia,serif;
+    --font-body:'Montserrat',system-ui,sans-serif;
+    --font-script:'Yellowtail',cursive;
+    --disp-wt:800; --disp-tr:-0.01em; --radius:18px; --maxw:1180px;
+    --tex-clay:url('assets/texture-clay.jpg');
+  }
+  :root[data-theme="editorial"]{ --font-display:'Zilla Slab',Georgia,serif; --disp-wt:700; --disp-tr:-0.005em; --radius:4px; }
+  :root[data-theme="modern"]{ --font-display:'Montserrat',system-ui,sans-serif; --disp-wt:800; --disp-tr:-0.025em; --radius:10px; }
+  ::selection{background:var(--clay);color:#fff;}
+  @media(max-width:640px){ [data-sec]{padding-top:62px!important;padding-bottom:62px!important;} }
+  a{color:inherit;}
+</style>
+</helmet>
+
+<div style="font-family:var(--font-body);color:var(--ink);background:linear-gradient(rgba(152,75,52,.64),rgba(152,75,52,.74)),var(--tex-clay);background-size:cover;background-position:center;background-attachment:fixed;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden;">
+
+  <dc-import name="FoundHer Nav" active="faqs" hint-size="100%,72px"></dc-import>
+
+  <!-- HERO -->
+  <section data-sec style="background:transparent;color:var(--on-dark);padding:96px 0 40px;">
+    <div style="max-width:880px;margin:0 auto;padding:0 26px;">
+      <p style="font-family:var(--font-slab);text-transform:uppercase;letter-spacing:.26em;font-size:13px;font-weight:600;color:var(--peach);margin:0 0 18px;">FAQs</p>
+      <h1 style="font-family:var(--font-display);font-weight:var(--disp-wt);letter-spacing:var(--disp-tr);font-size:clamp(40px,6vw,72px);line-height:.98;margin:0;color:#fff;">Answering your questions.</h1>
+      <p style="font-size:clamp(17px,2vw,20px);line-height:1.55;color:#f4e3d4;max-width:48ch;margin:24px 0 0;font-weight:300;">Everything you need to know about applying to and joining Hawai&#699;i FoundHer.</p>
+    </div>
+  </section>
+
+  <!-- FAQ LIST -->
+  <section data-sec style="background:transparent;padding:40px 0 84px;flex:1;">
+    <div style="max-width:880px;margin:0 auto;padding:0 26px;">
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="4">
+          <div style="background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;">
+            <button onClick="{{ f.toggle }}" style="width:100%;text-align:left;background:transparent;border:0;cursor:pointer;padding:22px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:var(--font-display);font-weight:700;font-size:17px;color:var(--ink);">
+              <span>{{ f.q }}</span>
+              <span style="color:var(--clay);font-size:24px;flex:none;line-height:1;">{{ f.sign }}</span>
+            </button>
+            <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:0 24px 24px;">
+                <p style="font-size:15.5px;line-height:1.6;color:var(--muted);margin:0;font-weight:400;">{{ f.answer }}</p>
+                <sc-if value="{{ f.hasBullets }}" hint-placeholder-val="{{ false }}">
+                  <div style="display:flex;flex-direction:column;gap:8px;margin-top:12px;">
+                    <sc-for list="{{ f.bullets }}" as="bl" hint-placeholder-count="3">
+                      <div style="display:flex;gap:10px;align-items:baseline;font-size:15px;color:var(--ink);font-weight:400;line-height:1.45;"><span style="color:var(--clay);flex:none;">&#9670;</span><span>{{ bl }}</span></div>
+                    </sc-for>
+                  </div>
+                </sc-if>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="margin-top:42px;background:var(--blush);border-radius:var(--radius);padding:34px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;">
+        <div>
+          <h3 style="font-family:var(--font-display);font-weight:700;font-size:22px;margin:0 0 4px;color:var(--ink);">Still have a question?</h3>
+          <p style="font-size:15px;color:var(--muted);margin:0;font-weight:400;">We&#700;re here to help, reach out anytime.</p>
+        </div>
+        <a href="contact.html" style="text-decoration:none;background:var(--clay);color:#fff;font-family:var(--font-display);font-weight:700;padding:14px 30px;border-radius:999px;font-size:16px;white-space:nowrap;" style-hover="background:var(--clay-2)">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="FoundHer Footer" hint-size="100%,380px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { openFaq: 0 }; }
+  faqData() {
+    return [
+      { q: 'What are the basic criteria to qualify?', answer: "To be eligible for either program you'll need:", bullets: [
+        'A for-profit business (LLC or corporation)',
+        'Proof of concept: sales, partnerships, or active users',
+        '51% women founders of Native Hawaiian, Pacific Islander, or Asian descent, based in Hawaiʻi',
+        'Early stage, under 3 years in operation',
+        'Values aligned with FoundHer' ] },
+      { q: 'Are applications open?', answer: 'Applications for 2026 are now closed. Follow our Instagram or LinkedIn for 2027 program announcements.' },
+      { q: 'How do I know which program to apply for?', answer: "If you're on Hawaiʻi Island with a business in agriculture or food, apply for Kapalili. If you're anywhere in Hawaiʻi, apply for Pae ʻĀina." },
+      { q: 'Is this a grant?', answer: 'FoundHer is a 6-month accelerator that includes a non-dilutive grant as part of the program. Full participation is required to receive funding.' },
+    ];
+  }
+  renderVals() {
+    const openFaq = this.state.openFaq;
+    return {
+      faqs: this.faqData().map((f, i) => ({
+        q: f.q, answer: f.answer, bullets: f.bullets || [],
+        hasBullets: !!(f.bullets && f.bullets.length),
+        open: openFaq === i, sign: openFaq === i ? '–' : '+',
+        toggle: () => this.setState(s => ({ openFaq: s.openFaq === i ? -1 : i })),
+      })),
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html data-theme="modern">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&amp;family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Montserrat:wght@200;300;400;500;600;700&amp;family=Yellowtail&amp;display=swap" rel="stylesheet">
+<script src="image-slot.js"></script>
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+  body{margin:0;}
+  :root{
+    --espresso:#c36a4e; --espresso-2:#b65a3e; --deep:#984b34;
+    --clay:#b65a3e; --clay-2:#c36a4e; --coral:#c36a4e;
+    --cream:#ffefdd; --blush:#fbe7d2; --peach:#fed5a7; --sand:#f7e3cc; --card:#fff8ee;
+    --ink:#3a1f16; --muted:#8a6f5e; --on-dark:#ffefdd; --on-dark-muted:#e6c7ad;
+    --line:#f0dcc6; --line-dark:rgba(255,239,221,.15);
+    --font-display:'Baloo 2',system-ui,sans-serif;
+    --font-slab:'Zilla Slab',Georgia,serif;
+    --font-body:'Montserrat',system-ui,sans-serif;
+    --font-script:'Yellowtail',cursive;
+    --disp-wt:800; --disp-tr:-0.01em; --radius:18px; --maxw:1180px;
+    --tex-clay:url('assets/texture-clay.jpg');
+    --tex-coral:url('assets/texture-coral.jpg');
+  }
+  :root[data-theme="editorial"]{ --font-display:'Zilla Slab',Georgia,serif; --disp-wt:700; --disp-tr:-0.005em; --radius:4px; }
+  :root[data-theme="modern"]{ --font-display:'Montserrat',system-ui,sans-serif; --disp-wt:800; --disp-tr:-0.025em; --radius:10px; }
+  ::selection{background:var(--clay);color:#fff;}
+  input::placeholder,textarea::placeholder{color:#b89a82;}
+  @media(max-width:640px){ [data-sec]{padding-top:62px!important;padding-bottom:62px!important;} }
+  a{color:inherit;}
+  image-slot{display:block;width:100%;height:100%;}
+</style>
+</helmet>
+
+<div style="font-family:var(--font-body);color:var(--ink);background:var(--espresso);min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden;">
+
+  <dc-import name="FoundHer Nav" active="contact" hint-size="100%,72px"></dc-import>
+
+  <!-- CONTACT -->
+  <section data-sec="" style="background:linear-gradient(rgba(152,75,52,.58),rgba(152,75,52,.74)),var(--tex-clay);background-size:cover;background-position:center;color:var(--on-dark);padding:100px 0;flex:1;">
+    <div style="max-width:var(--maxw);margin:0 auto;padding:0 26px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:56px;align-items:center;">
+      <div>
+        <p style="font-family:var(--font-slab);text-transform:uppercase;letter-spacing:.24em;font-size:13px;font-weight:600;color:var(--coral);margin:0 0 16px;">Contact</p>
+        <h1 style="font-family:var(--font-display);font-weight:var(--disp-wt);letter-spacing:var(--disp-tr);font-size:clamp(38px,5.2vw,64px);line-height:1.0;margin:0 0 18px;color:#fff;">Weʼd love to hear from you.</h1>
+        <p style="font-size:18px;line-height:1.6;color:var(--on-dark-muted);margin:0 0 26px;font-weight:300;max-width:42ch;">Questions, ideas, or ready to get involved? Or email <a href="{{ emailHref }}" style="color:var(--peach);text-decoration:underline;text-underline-offset:2px;">{{ email }}</a>.</p>
+        <image-slot id="fh-contact" shape="rounded" radius="18" placeholder="Drop a community photo" style="aspect-ratio:16/10;width:100%;max-width:460px;box-shadow:0 24px 60px -30px rgba(0,0,0,.6);"></image-slot>
+      </div>
+      <div style="background:rgba(255,239,221,.05);border:1px solid var(--line-dark);border-radius:var(--radius);padding:36px 32px;">
+        <sc-if value="{{ contactSent }}" hint-placeholder-val="{{ false }}">
+          <div style="text-align:center;padding:24px 0;">
+            <div style="font-family:var(--font-display);font-weight:800;font-size:30px;color:var(--coral);margin-bottom:10px;">Mahalo!</div>
+            <p style="color:var(--on-dark-muted);margin:0;font-weight:300;">Your email app should open with your message ready to send. If it doesnʼt, email us at keanu@purplemaia.org.</p>
+          </div>
+        </sc-if>
+        <sc-if value="{{ contactNotSent }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ submitContact }}" style="display:flex;flex-direction:column;gap:16px;">
+            <input required="" name="name" placeholder="Name" style="background:rgba(255,239,221,.07);border:1px solid var(--line-dark);color:var(--on-dark);border-radius:12px;padding:15px 18px;font-family:var(--font-body);font-size:15px;outline:none;" style-focus="border-color:var(--coral)">
+            <input required="" type="email" name="email" placeholder="Email" style="background:rgba(255,239,221,.07);border:1px solid var(--line-dark);color:var(--on-dark);border-radius:12px;padding:15px 18px;font-family:var(--font-body);font-size:15px;outline:none;" style-focus="border-color:var(--coral)">
+            <textarea required="" name="message" placeholder="Message" rows="6" style="background:rgba(255,239,221,.07);border:1px solid var(--line-dark);color:var(--on-dark);border-radius:12px;padding:15px 18px;font-family:var(--font-body);font-size:15px;outline:none;resize:vertical;" style-focus="border-color:var(--coral)"></textarea>
+            <button type="submit" style="align-self:flex-start;background:var(--clay);color:#fff;border:0;font-family:var(--font-display);font-weight:700;padding:15px 34px;border-radius:999px;font-size:16px;cursor:pointer;" style-hover="background:var(--clay-2)">Send Message</button>
+          </form>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="FoundHer Footer" hint-size="100%,380px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { contactSent: false }; }
+  renderVals() {
+    const to = ['keanu','darien','nicole'].map(u => u + '\u0040' + 'purplemaia.org');
+    return {
+      contactSent: this.state.contactSent,
+      contactNotSent: !this.state.contactSent,
+      submitContact: (e) => {
+        e.preventDefault();
+        const f = e.target;
+        const name = (f.name && f.name.value || '').trim();
+        const email = (f.email && f.email.value || '').trim();
+        const message = (f.message && f.message.value || '').trim();
+        const subject = 'Website inquiry from ' + (name || 'a visitor');
+        const body = 'Name: ' + name + '\nEmail: ' + email + '\n\n' + message;
+        const href = 'mailto:' + to.join(',')
+          + '?subject=' + encodeURIComponent(subject)
+          + '&body=' + encodeURIComponent(body);
+        window.location.href = href;
+        this.setState({ contactSent: true });
+      },
+      email: to[0],
+      emailHref: 'mailto:' + to.join(','),
+    };
+  }
+}
+</script>
+</body>
+</html>

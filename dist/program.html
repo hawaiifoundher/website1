@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html data-theme="modern">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&amp;family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Montserrat:wght@200;300;400;500;600;700&amp;family=Yellowtail&amp;display=swap" rel="stylesheet">
+<script src="image-slot.js"></script>
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+  body{margin:0;}
+  :root{
+    --espresso:#c36a4e; --espresso-2:#b65a3e; --deep:#984b34;
+    --clay:#b65a3e; --clay-2:#c36a4e; --coral:#c36a4e;
+    --cream:#ffefdd; --blush:#fbe7d2; --peach:#fed5a7; --sand:#f7e3cc; --card:#fff8ee;
+    --ink:#3a1f16; --muted:#8a6f5e; --on-dark:#ffefdd; --on-dark-muted:#e6c7ad;
+    --line:#f0dcc6; --line-dark:rgba(255,239,221,.15);
+    --font-display:'Baloo 2',system-ui,sans-serif;
+    --font-slab:'Zilla Slab',Georgia,serif;
+    --font-body:'Montserrat',system-ui,sans-serif;
+    --font-script:'Yellowtail',cursive;
+    --disp-wt:800; --disp-tr:-0.01em; --radius:18px; --maxw:1180px;
+    --tex-clay:url('assets/texture-clay.jpg');
+    --tex-cream:url('assets/texture-cream.jpg');
+    --tex-coral:url('assets/texture-coral.jpg');
+  }
+  :root[data-theme="editorial"]{ --font-display:'Zilla Slab',Georgia,serif; --disp-wt:700; --disp-tr:-0.005em; --radius:4px; }
+  :root[data-theme="modern"]{ --font-display:'Montserrat',system-ui,sans-serif; --disp-wt:800; --disp-tr:-0.025em; --radius:10px; }
+  ::selection{background:var(--clay);color:#fff;}
+  @media(max-width:640px){ [data-sec]{padding-top:62px!important;padding-bottom:62px!important;} [data-hero]{padding-top:48px!important;padding-bottom:64px!important;} }
+  @media(max-width:860px){ [data-eliggrid]{grid-template-columns:repeat(2,1fr)!important;} [data-teamgrid]{grid-template-columns:repeat(2,1fr)!important;} }
+  @media(max-width:480px){ [data-eliggrid]{grid-template-columns:1fr!important;} [data-teamgrid]{grid-template-columns:1fr!important;} }
+  @media(max-width:560px){ [data-testcard]{grid-template-columns:1fr!important;} }
+  a{color:inherit;}
+  image-slot{display:block;width:100%;height:100%;}
+</style>
+</helmet>
+
+<div style="font-family:var(--font-body);color:var(--ink);background:var(--cream);overflow-x:hidden;">
+
+  <dc-import name="FoundHer Nav" active="program" hint-size="100%,72px"></dc-import>
+
+  <!-- HERO -->
+  <section data-hero="" data-sec="" style="background:linear-gradient(rgba(152,75,52,.56),rgba(152,75,52,.72)),var(--tex-clay);background-size:cover;background-position:center;color:var(--on-dark);padding:100px 0 96px;">
+    <div style="max-width:var(--maxw);margin:0 auto;padding:0 26px;">
+      <p style="font-family:var(--font-slab);text-transform:uppercase;letter-spacing:.26em;font-size:13px;font-weight:600;color:var(--coral);margin:0 0 20px;">The Program</p>
+      <h1 style="font-family:var(--font-display);font-weight:var(--disp-wt);letter-spacing:var(--disp-tr);font-size:clamp(40px,6vw,76px);line-height:.98;margin:0;color:#fff;max-width:16ch;">We built what didnʼt exist.</h1>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;margin-top:34px;align-items:start;">
+        <p style="font-size:18px;line-height:1.6;color:var(--on-dark-muted);margin:0;font-weight:300;">Most accelerators are built around one goal: exit. Sell fast, scale fast, cash out. FoundHer was built around a different question:&nbsp;<em style="color: var(--peach); font-style: normal; font-weight: 500;">what if wāhine in Hawaiʻi could build businesses that let them stay?</em></p>
+        <p style="font-size:18px;line-height:1.6;color:var(--on-dark-muted);margin:0;font-weight:300;">Since 2021, weʼve backed 24 companies, delivered over $480K in non-dilutive investment, and watched founders triple their revenue and build wholesale accounts, childcare stability, and community. Weʼre not slowing down.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION & VISION -->
+  <section data-sec="" style="background:linear-gradient(rgba(255,239,221,.7),rgba(255,239,221,.7)),var(--tex-cream);background-size:cover;background-position:center;padding:90px 0;">
+    <div style="max-width:var(--maxw);margin:0 auto;padding:0 26px;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;align-items:center;">
+        <image-slot id="fh-mission-vision" shape="rounded" radius="18" placeholder="Drop a photo" style="aspect-ratio:4/5;width:100%;box-shadow:0 18px 44px -26px rgba(58,31,22,.5);"></image-slot>
+        <div style="display:flex;flex-direction:column;gap:34px;">
+          <div>
+            <p style="font-family:var(--font-slab);text-transform:uppercase;letter-spacing:.2em;font-size:13px;font-weight:700;color:var(--clay);margin:0 0 14px;">Our Mission</p>
+            <p style="font-family:var(--font-display);font-weight:600;font-size:clamp(24px,3vw,34px);line-height:1.15;margin:0;color:var(--ink);">To build economic sovereignty and create lasting community impact through wāhine leadership.</p>
+          </div>
+          <div>
+            <p style="font-family:var(--font-slab);text-transform:uppercase;letter-spacing:.2em;font-size:13px;font-weight:700;color:var(--clay);margin:0 0 14px;">Our Vision</p>
+            <p style="font-size:18px;line-height:1.6;margin:0;color:var(--muted);font-weight:400;">A transformed economic landscape, rooted in cooperation, cultural grounding, and regenerative practice where businesses uplift community and ʻāina.</p>
+            <p style="font-size:16px;line-height:1.6;margin:20px 0 0;color:var(--ink);font-weight:400;">Women-led businesses are less risky, deliver greater ROI, and multiply their impact across community. Yet the funding gap persists. FoundHer closes it with capital, care, and a curriculum built through an indigenous cultural lens.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU GET + CURRICULUM -->
+  <section data-sec="" style="background:linear-gradient(rgba(255,239,221,.7),rgba(255,239,221,.7)),var(--tex-cream);background-size:cover;background-position:center;padding:58px 0;">
+    <div style="max-width:var(--maxw);margin:0 auto;padding:0 26px;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;align-items:start;">
+        <div>
+          <p style="font-family:var(--font-slab);text-transform:uppercase;letter-spacing:.2em;font-size:13px;font-weight:700;color:var(--clay);margin:0 0 18px;">What You Get</p>
+          <div style="display:flex;flex-direction:column;gap:0;">
+            <sc-for list="{{ benefits }}" as="b" hint-placeholder-count="6">
+              <div style="display:flex;gap:14px;align-items:baseline;padding:15px 0;border-bottom:1px solid rgba(182,90,62,.18);">
+                <span style="color:var(--clay);font-family:var(--font-display);font-weight:800;font-size:15px;flex:none;">◆</span>
+                <span style="font-size:16px;line-height:1.45;color:var(--ink);font-weight:500;">{{ b }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div>
+          <p style="font-family:var(--font-slab);text-transform:uppercase;letter-spacing:.2em;font-size:13px;font-weight:700;color:var(--clay);margin:0 0 6px;">Curriculum</p>
+          <p style="font-size:15px;color:var(--muted);margin:0 0 18px;font-weight:400;">Real business skills taught through an indigenous cultural lens.</p>
+          <sc-for list="{{ curriculum }}" as="c" hint-placeholder-count="6">
+            <div style="display:grid;grid-template-columns:minmax(120px,180px) 1fr;gap:18px;padding:15px 0;border-bottom:1px solid rgba(182,90,62,.18);align-items:baseline;">
+              <div style="font-family:var(--font-display);font-weight:700;font-size:16px;color:var(--ink);">{{ c.t }}</div>
+              <div style="font-size:14.5px;color:var(--muted);line-height:1.45;">{{ c.d }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHICH PROGRAM -->
+  <section data-sec="" style="background:linear-gradient(rgba(255,239,221,.7),rgba(255,239,221,.7)),var(--tex-cream);background-size:cover;background-position:center;padding:92px 0;">
+    <div style="max-width:var(--maxw);margin:0 auto;padding:0 26px;">
+      <p style="font-family:var(--font-slab);text-transform:uppercase;letter-spacing:.2em;font-size:13px;font-weight:700;color:var(--clay);margin:0 0 8px;">Is FoundHer For You?</p>
+      <h2 style="font-family:var(--font-display);font-weight:var(--disp-wt);letter-spacing:var(--disp-tr);font-size:clamp(28px,3.6vw,42px);line-height:1.05;margin:0 0 34px;">Find your program.</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px;">
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px;">
+          <h3 style="font-family:var(--font-display);font-weight:700;font-size:26px;margin:0 0 6px;color:var(--clay);">Pae ʻĀina</h3>
+          <p style="font-size:15.5px;line-height:1.55;color:var(--ink);margin:0;font-weight:400;">Youʼre based <strong>anywhere in Hawaiʻi</strong>. Your business can be in <strong>any industry</strong>.</p>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px;">
+          <h3 style="font-family:var(--font-display);font-weight:700;font-size:26px;margin:0 0 6px;color:var(--clay);">Kapalili</h3>
+          <p style="font-size:15.5px;line-height:1.55;color:var(--ink);margin:0;font-weight:400;">Youʼre based on <strong>Hawaiʻi Island</strong>. Your business is in <strong>agriculture, food production, or food systems</strong>.</p>
+        </div>
+      </div>
+      <div style="margin-top:26px;background:linear-gradient(rgba(120,52,34,.5),rgba(120,52,34,.68)),var(--tex-coral);background-size:cover;background-position:center;color:var(--on-dark);border-radius:var(--radius);padding:30px 30px;">
+        <p style="font-family:var(--font-slab);text-transform:uppercase;letter-spacing:.18em;font-size:12.5px;font-weight:600;color:var(--peach);margin:0 0 16px;">To join either program youʼll need</p>
+        <div data-eliggrid="" style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px 44px;">
+          <sc-for list="{{ eligibility }}" as="e" hint-placeholder-count="5">
+            <div style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:var(--on-dark);font-weight:300;line-height:1.4;"><span style="color:var(--peach);flex:none;">✓</span><span>{{ e }}</span></div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="margin-top:22px;">
+        <image-slot id="fh-which-program" shape="rounded" radius="16" placeholder="Drop a photo" style="width:100%;aspect-ratio:21/8;box-shadow:0 18px 44px -28px rgba(58,31,22,.5);"></image-slot>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE SELECT -->
+  <section data-sec="" style="background:linear-gradient(rgba(120,52,34,.5),rgba(120,52,34,.68)),var(--tex-coral);background-size:cover;background-position:center;color:var(--on-dark);padding:90px 0;">
+    <div style="max-width:var(--maxw);margin:0 auto;padding:0 26px;">
+      <p style="font-family:var(--font-slab);text-transform:uppercase;letter-spacing:.2em;font-size:13px;font-weight:600;color:var(--coral);margin:0 0 8px;">How We Select Our Cohort</p>
+      <h2 style="font-family:var(--font-display);font-weight:var(--disp-wt);letter-spacing:var(--disp-tr);font-size:clamp(26px,3.4vw,40px);line-height:1.08;margin:0 0 36px;color:#fff;max-width:24ch;">We look for founders ready to grow, and who lead with values.</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;">
+        <sc-for list="{{ selectSteps }}" as="st" hint-placeholder-count="4">
+          <div style="border-top:2px solid var(--clay);padding-top:18px;">
+            <div style="font-family:var(--font-display);font-weight:800;font-size:14px;color:var(--coral);letter-spacing:.08em;">STEP {{ st.n }}</div>
+            <h4 style="font-family:var(--font-display);font-weight:700;font-size:20px;margin:8px 0 8px;color:#fff;">{{ st.t }}</h4>
+            <p style="font-size:14.5px;line-height:1.5;color:var(--on-dark-muted);margin:0;font-weight:300;">{{ st.d }}</p>
+          </div>
+        </sc-for>
+      </div>
+      <p style="margin:34px 0 0;font-size:14.5px;color:var(--on-dark-muted);background:rgba(255,239,221,.06);border:1px solid var(--line-dark);border-radius:999px;padding:12px 22px;display:inline-block;">Applications for 2026 are now closed. Follow us on Instagram or LinkedIn for 2027 announcements.</p>
+    </div>
+  </section>
+
+  <!-- FROM OUR OHANA -->
+  <section data-sec="" style="background:linear-gradient(rgba(255,239,221,.7),rgba(255,239,221,.7)),var(--tex-cream);background-size:cover;background-position:center;padding:92px 0;">
+    <div style="max-width:var(--maxw);margin:0 auto;padding:0 26px;">
+      <p style="font-family:var(--font-slab);text-transform:uppercase;letter-spacing:.2em;font-size:13px;font-weight:700;color:var(--clay);margin:0 0 28px;">From Our ʻOhana</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;">
+        <div data-testcard style="background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:32px 30px;display:grid;grid-template-columns:1fr 200px;gap:28px;align-items:start;">
+          <div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:18px;">
+              <div><div style="font-family:var(--font-display);font-weight:800;font-size:28px;color:var(--clay);">3.5×</div><div style="font-size:12.5px;color:var(--muted);">Revenue growth</div></div>
+              <div><div style="font-family:var(--font-display);font-weight:800;font-size:28px;color:var(--clay);">6</div><div style="font-size:12.5px;color:var(--muted);">Jobs created</div></div>
+              <div><div style="font-family:var(--font-display);font-weight:800;font-size:28px;color:var(--clay);">1</div><div style="font-size:12.5px;color:var(--muted);">Flagship storefront</div></div>
+            </div>
+            <p style="font-style:italic;font-family:var(--font-slab);font-size:16.5px;line-height:1.5;color:var(--ink);margin:0 0 16px;">“Our quality of life at home has improved significantly, we travel, we've purchased real estate, we're planning for ours kids' future. FoundHer didn't just help me grow my business, it helped me understand my business.”</p>
+            <p style="margin:0;font-weight:700;font-family:var(--font-display);color:var(--ink);font-size:15px;">Taleea Carvalho <span style="color:var(--muted);font-weight:400;font-family:var(--font-body);">· Wailua Granola Company · Kauaʻi · Cohort 3</span></p>
+          </div>
+          <image-slot id="fh-test-taleea" shape="circle" placeholder="Photo" style="width:100%;aspect-ratio:1;height:auto;align-self:start;"></image-slot>
+        </div>
+        <div data-testcard style="background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:32px 30px;display:grid;grid-template-columns:1fr 200px;gap:28px;align-items:start;">
+          <div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:18px;">
+              <div><div style="font-family:var(--font-display);font-weight:800;font-size:28px;color:var(--clay);">3×</div><div style="font-size:12.5px;color:var(--muted);">Revenue in Year 1</div></div>
+              <div><div style="font-family:var(--font-display);font-weight:800;font-size:28px;color:var(--clay);">76%</div><div style="font-size:12.5px;color:var(--muted);">Profit margin</div></div>
+              <div><div style="font-family:var(--font-display);font-weight:800;font-size:28px;color:var(--clay);">2×</div><div style="font-size:12.5px;color:var(--muted);">Pays farmers market rate</div></div>
+            </div>
+            <p style="font-style:italic;font-family:var(--font-slab);font-size:16.5px;line-height:1.5;color:var(--ink);margin:0 0 16px;">“None of this would be possible without FoundHer. There is nothing like this. We are positioned for longevity rather than just pure profit. We want to be sustainable because we actually care about what we are doing.”</p>
+            <p style="margin:0;font-weight:700;font-family:var(--font-display);color:var(--ink);font-size:15px;">Malie Sarsona <span style="color:var(--muted);font-weight:400;font-family:var(--font-body);">· Waimea Herb Company · Hawaiʻi Island · Cohort 1</span></p>
+          </div>
+          <image-slot id="fh-test-malie" shape="circle" placeholder="Photo" style="width:100%;aspect-ratio:1;height:auto;align-self:start;"></image-slot>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENTORS -->
+  <section data-sec="" style="background:linear-gradient(rgba(255,239,221,.7),rgba(255,239,221,.7)),var(--tex-cream);background-size:cover;background-position:center;padding:92px 0;">
+    <div style="max-width:var(--maxw);margin:0 auto;padding:0 26px;">
+      <p style="font-family:var(--font-slab);text-transform:uppercase;letter-spacing:.2em;font-size:13px;font-weight:700;color:var(--clay);margin:0 0 14px;">Our Mentors</p>
+      <p style="font-size:17px;line-height:1.6;color:var(--ink);max-width:62ch;margin:0 0 30px;font-weight:400;">Our mentors are the heartbeat of this program. We are deeply grateful to each of them for showing up, sharing their wisdom, and investing their time in the next generation of wāhine founders. Each company in our cohort is paired with two dedicated mentors throughout the 6 months.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:4px 26px;">
+        <sc-for list="{{ mentors }}" as="m" hint-placeholder-count="12">
+          <div style="padding:11px 0;border-bottom:1px solid rgba(182,90,62,.18);">
+            <span style="font-family:var(--font-display);font-weight:700;font-size:15px;color:var(--ink);">{{ m.name }}</span>
+            <span style="font-size:13.5px;color:var(--muted);"> — {{ m.org }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM + TIMELINE -->
+  <section data-sec="" style="background:linear-gradient(rgba(255,239,221,.7),rgba(255,239,221,.7)),var(--tex-cream);background-size:cover;background-position:center;padding:92px 0;">
+    <div style="max-width:var(--maxw);margin:0 auto;padding:0 26px;">
+      <p style="font-family:var(--font-slab);text-transform:uppercase;letter-spacing:.2em;font-size:13px;font-weight:700;color:var(--clay);margin:0 0 26px;">Our Team</p>
+      <div data-teamgrid="" style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;">
+        <sc-for list="{{ team }}" as="t" hint-placeholder-count="4">
+          <div style="background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;">
+            <image-slot id="{{ t.id }}" shape="circle" placeholder="Photo" style="width:78px;height:78px;flex:none;"></image-slot>
+            <div>
+              <h4 style="font-family:var(--font-display);font-weight:700;font-size:18px;margin:6px 0 2px;color:var(--ink);">{{ t.name }}</h4>
+              <p style="font-family:var(--font-slab);text-transform:uppercase;letter-spacing:.08em;font-size:11.5px;font-weight:600;color:var(--clay);margin:0 0 10px;">{{ t.role }}</p>
+              <p style="font-size:13.5px;line-height:1.5;color:var(--muted);margin:0;font-weight:400;">{{ t.bio }}</p>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+
+      <p style="font-family:var(--font-slab);text-transform:uppercase;letter-spacing:.2em;font-size:13px;font-weight:700;color:var(--clay);margin:54px 0 6px;">Our Story</p>
+      <p style="font-family:var(--font-slab);font-style:italic;font-size:18px;color:var(--muted);margin:0 0 26px;">Five years. Six cohorts. And our moʻolelo still in kākau mode.</p>
+      <div style="display:flex;gap:0;overflow-x:auto;background:var(--blush);border-radius:var(--radius);padding:26px 24px;">
+        <sc-for list="{{ timeline }}" as="tl" hint-placeholder-count="5">
+          <div style="flex:1;min-width:150px;text-align:center;padding:0 12px;border-right:1px solid rgba(182,90,62,.25);">
+            <div style="font-family:var(--font-display);font-weight:800;font-size:22px;color:var(--clay);">{{ tl.y }}</div>
+            <div style="font-size:13px;color:var(--ink);margin-top:6px;line-height:1.4;font-weight:500;">{{ tl.t }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPERATING PARTNER -->
+  <section data-sec="" style="background:linear-gradient(rgba(120,52,34,.5),rgba(120,52,34,.68)),var(--tex-coral);background-size:cover;background-position:center;color:var(--on-dark);padding:80px 0;">
+    <div style="max-width:var(--maxw);margin:0 auto;padding:0 26px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:36px;align-items:center;">
+      <div>
+        <p style="font-family:var(--font-slab);text-transform:uppercase;letter-spacing:.2em;font-size:13px;font-weight:600;color:var(--coral);margin:0 0 14px;">Operating Partner</p>
+        <p style="font-size:17px;line-height:1.6;color:var(--on-dark-muted);margin:0;font-weight:300;">The <strong style="color:var(--peach);font-weight:600;">Purple Maiʻa Foundation</strong> is on a mission to educate and empower the next generation of culturally grounded, community-serving technology makers and problem solvers.</p>
+        <a href="https://purplemaia.org" target="_blank" rel="noopener" style="display:inline-block;margin-top:22px;text-decoration:none;color:var(--coral);font-family:var(--font-display);font-weight:700;" style-hover="color:#fff">Learn More →</a>
+      </div>
+      <div style="text-align:center;"><image-slot id="fh-pmf" shape="rounded" radius="16" placeholder="Purple Maiʻa / team photo" style="aspect-ratio:16/10;width:100%;"></image-slot></div>
+    </div>
+  </section>
+
+  <dc-import name="FoundHer Footer" hint-size="100%,380px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      benefits: [
+        '$20,000 non-dilutive grant',
+        '$4,000 ʻOhana Care Stipend: for keiki or kupuna care',
+        '6 months of workshops and curriculum',
+        'Two dedicated mentors',
+        'Two in-person retreats',
+        'A cohort of wāhine founders who become ʻohana',
+      ],
+      curriculum: [
+        { t: 'Foundations', d: 'Financials, business plans, legal, AI' },
+        { t: 'Marketing Strategy', d: 'Branding, email, social, website' },
+        { t: 'Product Strategy', d: 'Retail, distribution, shipping, expansion' },
+        { t: 'Operations', d: 'E-commerce, ʻāina-forward practices, pricing' },
+        { t: 'Pitching & Funding', d: 'Capital strategy, grant writing, pitch practice' },
+        { t: 'Cultural Grounding', d: 'Storytelling, wellness' },
+      ],
+      eligibility: [
+        'A for-profit business (LLC or corporation)',
+        'Proof of concept: sales, partnerships, or active users',
+        '51% women founders of Native Hawaiian, Pacific Islander, or Asian descent',
+        'Early stage (under 3 years)',
+        'Values aligned with FoundHer',
+      ],
+      selectSteps: [
+        { n: '1', t: 'Applications', d: 'Tell us your story, your business, and what drives you.' },
+        { n: '2', t: 'First Round', d: 'A conversation with the FoundHer team. We want to hear how you think, not just what you\u2019ve built.' },
+        { n: '3', t: 'Due Diligence', d: 'We take a closer look at your business, financials, and growth potential.' },
+        { n: '4', t: 'Final Interview', d: 'You meet our selection committee to ensure we\u2019re a good fit.' },
+      ],
+      team: [
+        { id: 'fh-team-1', name: 'Nicole Brodie', role: 'Interim Director', bio: "Nicole brings deep roots in Hawaiʻi's nonprofit and business ecosystem, with a background spanning operations, hospitality, and clean energy. She holds a Master's degree from the University of Hawaiʻi at Mānoa." },
+        { id: 'fh-team-2', name: 'Darien Siguenza', role: 'Program Manager, Pae ʻĀina', bio: 'Darien came to FoundHer from the LA Cleantech Incubator and has been with the program since its founding cohort in 2021, \u201cthis is for women like me.\u201d' },
+        { id: 'fh-team-3', name: 'Keanu Wilson', role: 'Program Manager, Kapalili', bio: 'Keanu is a digital artist, entrepreneur, and community builder who leads the Kapalili program on Hawaiʻi Island, supporting wāhine founders in agriculture and food.' },
+        { id: 'fh-team-4', name: 'Jazzy Kealoha', role: 'Marketing Manager', bio: "Jazzy holds an MBA with a background in anthropology, psychology, and marketing. For her, branding isn't about visuals, it's the whole system: the feeling, the story, the culture." },
+      ],
+      timeline: [
+        { y: '2021', t: 'Pilot cohort launched' },
+        { y: '2022–26', t: 'Four cohorts executed' },
+        { y: '2026', t: 'Kapalili: Hawaiʻi Island cohort launched' },
+        { y: '2026', t: '501(c)(3) status achieved' },
+        { y: '2027+', t: 'Regional & continental expansion' },
+      ],
+      mentors: [
+        { name: 'Kūhaʻo Zane', org: 'Creative Director, Sig Zane Designs' },
+        { name: 'Colleen Echohawk', org: 'President, Headwater People' },
+        { name: 'Allison Izu Song', org: 'Founder & Designer, Allison Izu' },
+        { name: 'Ane Bukatis', org: 'Co-Founder, Kealopiko' },
+        { name: 'Pia Chock', org: 'Portfolio Manager, Kamehameha Schools' },
+        { name: 'Wendy Awai-Dakroub', org: 'Founder & CEO, ʻŌhiʻa Technology' },
+        { name: 'Jason Walter', org: 'Sr. Brand Director, Waiākea' },
+        { name: 'Jennifer Apy', org: 'CMO, Chief Outsiders' },
+        { name: 'Terri Funakoshime', org: 'COO, YWCA Oʻahu' },
+        { name: 'Charmayne Malloy', org: 'Co-Founder, Honolulu Beerworks' },
+        { name: 'Akemi Hiatt', org: 'Executive Director, OurSpace Hawaii' },
+        { name: 'Nicole Cacal', org: 'Executive Director, TRUE Initiative' },
+        { name: 'Sherrie Totoki', org: 'Operations, Portfolio & Community Expert' },
+        { name: 'Poni Askew', org: 'Founder & CEO, Hawaiian Vinegar & Spice' },
+        { name: 'Dana Mahina Arimoto', org: 'Founder/CEO & Leadership Coach' },
+        { name: 'Ivory Lloyd', org: 'Director of Brand & Events, Common Ground Kauaʻi' },
+        { name: 'Rachel Ladrig', org: 'President, Hawaiʻi Farmers Union' },
+        { name: 'Kalisi Mausio', org: 'Founder, Onomea Farm Hub' },
+        { name: 'Lehia Apana', org: 'Co-Founder, Polipoli Farms' },
+        { name: 'Lesa Almond', org: 'Owner, Beauty Theory Hawaiʻi' },
+        { name: 'Vivian Pham', org: 'Community Health Operations Lead, Kaiser Permanente' },
+        { name: 'Lilinoe Harbottle', org: 'Indigenous Data Scientist' },
+        { name: 'Kim Garrett', org: 'Founder, Northern Skye Growth Strategies' },
+        { name: 'Kiani Wong', org: 'Co-Founder, Kakaʻako Kasuals & Kiʻikau Printers' },
+        { name: 'Tanya Uyehara', org: 'Founder, Lahaʻole Designs, Kāholo' },
+        { name: 'Skye Rhoden', org: 'Founder & Creative Director, Kaululani Florals' },
+        { name: 'Cecilia Rodriguez', org: 'Founder, ONDA Ops' },
+        { name: 'Lauren Freeborn', org: 'Owner, Seattle Beauty Boss' },
+        { name: 'Zabrina Zablan-Duvauchelle', org: 'Founder/CEO, The Gay Agenda Collective' },
+        { name: 'Taleea Carvalho', org: 'Founder, Wailua Granola' },
+        { name: 'Jennifer Kumura', org: 'Co-Founder, UXHI' },
+        { name: 'Chris Bailey', org: 'Manager, Wahiawā Value-Added Product Development Center' },
+        { name: 'Jessie Jong', org: 'Founder, Jong Enterprise' },
+        { name: 'Adam Shaw', org: 'Risk Advisor, Adam Shaw Risk Advisory' },
+        { name: 'Brianna Enriquez-Cabalis', org: 'Senior Gym Manager, Fitness Forever' },
+        { name: 'Liya Safina', org: 'Product Designer & Innovation Expert' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
