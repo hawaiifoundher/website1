@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" type="image/png" href="assets/foundher-logo.png">
+<link rel="icon" type="image/png" href="assets/favicon.png">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -51,14 +51,14 @@
       <div>
         <p style="font-family:var(--font-slab);text-transform:uppercase;letter-spacing:.24em;font-size:13px;font-weight:600;color:var(--coral);margin:0 0 16px;">Contact</p>
         <h1 style="font-family:var(--font-display);font-weight:var(--disp-wt);letter-spacing:var(--disp-tr);font-size:clamp(38px,5.2vw,64px);line-height:1.0;margin:0 0 18px;color:#fff;">Weʼd love to hear from you.</h1>
-        <p style="font-size:18px;line-height:1.6;color:var(--on-dark-muted);margin:0 0 26px;font-weight:300;max-width:42ch;">Questions, ideas, or ready to get involved? Or email <a href="{{ emailHref }}" style="color:var(--peach);text-decoration:underline;text-underline-offset:2px;">{{ email }}</a>.</p>
+        <p style="font-size:18px;line-height:1.6;color:var(--on-dark-muted);margin:0 0 26px;font-weight:300;max-width:42ch;">Questions, ideas, or ready to get involved?</p>
         <image-slot id="fh-contact" shape="rounded" radius="18" placeholder="Drop a community photo" style="aspect-ratio:16/10;width:100%;max-width:460px;box-shadow:0 24px 60px -30px rgba(0,0,0,.6);"></image-slot>
       </div>
       <div style="background:rgba(255,239,221,.05);border:1px solid var(--line-dark);border-radius:var(--radius);padding:36px 32px;">
         <sc-if value="{{ contactSent }}" hint-placeholder-val="{{ false }}">
           <div style="text-align:center;padding:24px 0;">
             <div style="font-family:var(--font-display);font-weight:800;font-size:30px;color:var(--coral);margin-bottom:10px;">Mahalo!</div>
-            <p style="color:var(--on-dark-muted);margin:0;font-weight:300;">Your email app should open with your message ready to send. If it doesnʼt, email us at keanu@purplemaia.org.</p>
+            <p style="color:var(--on-dark-muted);margin:0;font-weight:300;">Your email app should open with your message ready to send. If it doesnʼt, email us at kokua@foundher.org.</p>
           </div>
         </sc-if>
         <sc-if value="{{ contactNotSent }}" hint-placeholder-val="{{ true }}">
@@ -81,7 +81,7 @@
 class Component extends DCLogic {
   constructor(props) { super(props); this.state = { contactSent: false }; }
   renderVals() {
-    const to = ['keanu','darien','nicole'].map(u => u + '\u0040' + 'purplemaia.org');
+    const to = ['kokua' + '\u0040' + 'foundher.org'];
     return {
       contactSent: this.state.contactSent,
       contactNotSent: !this.state.contactSent,
