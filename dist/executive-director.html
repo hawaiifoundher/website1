@@ -67,7 +67,6 @@
               </div>
             </sc-for>
           </div>
-          <a href="{{ applyHref }}" style="text-decoration:none;background:var(--clay);color:#fff;font-family:var(--font-display);font-weight:700;padding:15px 32px;border-radius:999px;font-size:16px;white-space:nowrap;flex:none;" style-hover="background:var(--clay-2)">Apply Now</a>
         </div>
         <p style="font-size:15px;color:var(--muted);margin:22px 0 0;font-weight:400;">Reports to the Hawai&#699;i FoundHer Board of Directors</p>
       </div>
@@ -144,7 +143,6 @@
         <h2 style="font-family:var(--font-display);font-weight:var(--disp-wt);letter-spacing:var(--disp-tr);font-size:clamp(28px,4vw,40px);line-height:1.05;margin:0 0 14px;color:var(--ink);">Ready to lead FoundHer?</h2>
         <p style="font-size:17px;line-height:1.6;color:var(--muted);max-width:52ch;margin:0 auto 30px;font-weight:400;">Send your r&#233;sum&#233; and a note about why this work matters to you. We review applications on a rolling basis.</p>
         <a href="{{ applyHref }}" style="text-decoration:none;background:var(--clay);color:#fff;font-family:var(--font-display);font-weight:700;padding:16px 38px;border-radius:999px;font-size:17px;display:inline-block;" style-hover="background:var(--clay-2)">Apply for Executive Director</a>
-        <p style="font-size:14px;color:var(--muted);margin:20px 0 0;font-weight:400;">Or email us directly at <a href="{{ applyHref }}" style="color:var(--clay);text-decoration:underline;text-underline-offset:2px;">kokua@foundher.org</a></p>
       </div>
     </div>
   </section>
@@ -157,7 +155,8 @@
 class Component extends DCLogic {
   renderVals() {
     const apply = 'mailto:kokua@foundher.org'
-      + '?subject=' + encodeURIComponent('Executive Director Application: Hawaiʻi FoundHer');
+      + '?subject=' + encodeURIComponent('Executive Director Application: Hawaiʻi FoundHer')
+      + '&body=' + encodeURIComponent('Aloha Hawaiʻi FoundHer team,\n\nI am writing to apply for the Executive Director role. Please find my résumé attached, along with a note on why this work matters to me.\n\n[Tell us a little about yourself here]\n\nMahalo,\n');
     return {
       applyHref: apply,
       terms: [
