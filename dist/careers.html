@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html data-theme="modern">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@200;300;400;500;600;700&family=Yellowtail&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+  body{margin:0;}
+  :root{
+    --espresso:#c36a4e; --espresso-2:#b65a3e; --deep:#984b34;
+    --clay:#b65a3e; --clay-2:#c36a4e; --coral:#c36a4e;
+    --cream:#ffefdd; --blush:#fbe7d2; --peach:#fed5a7; --sand:#f7e3cc; --card:#fff8ee;
+    --ink:#3a1f16; --muted:#8a6f5e; --on-dark:#ffefdd; --on-dark-muted:#e6c7ad;
+    --line:#f0dcc6; --line-dark:rgba(255,239,221,.15);
+    --font-display:'Baloo 2',system-ui,sans-serif;
+    --font-slab:'Zilla Slab',Georgia,serif;
+    --font-body:'Montserrat',system-ui,sans-serif;
+    --font-script:'Yellowtail',cursive;
+    --disp-wt:800; --disp-tr:-0.01em; --radius:18px; --maxw:1180px;
+    --tex-clay:url('assets/texture-clay.jpg');
+    --tex-cream:url('assets/texture-cream.jpg');
+    --tex-coral:url('assets/texture-coral.jpg');
+  }
+  :root[data-theme="editorial"]{ --font-display:'Zilla Slab',Georgia,serif; --disp-wt:700; --disp-tr:-0.005em; --radius:4px; }
+  :root[data-theme="modern"]{ --font-display:'Montserrat',system-ui,sans-serif; --disp-wt:800; --disp-tr:-0.025em; --radius:10px; }
+  ::selection{background:var(--clay);color:#fff;}
+  a{color:inherit;}
+  @media(max-width:640px){ [data-sec]{padding-top:62px!important;padding-bottom:62px!important;} }
+  @media(max-width:820px){ [data-valgrid]{grid-template-columns:1fr!important;} }
+  @media(max-width:680px){ [data-jobcard]{flex-direction:column!important;align-items:flex-start!important;} [data-jobcta]{width:100%!important;text-align:center!important;} }
+</style>
+</helmet>
+
+<div style="font-family:var(--font-body);color:var(--ink);background:var(--cream);min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden;">
+
+  <dc-import name="FoundHer Nav" active="careers" hint-size="100%,72px"></dc-import>
+
+  <!-- HERO -->
+  <section data-sec style="background:linear-gradient(rgba(120,52,34,.5),rgba(120,52,34,.68)),var(--tex-coral);background-size:cover;background-position:center;color:var(--on-dark);padding:96px 0 90px;">
+    <div style="max-width:var(--maxw);margin:0 auto;padding:0 26px;">
+      <p style="font-family:var(--font-slab);text-transform:uppercase;letter-spacing:.26em;font-size:13px;font-weight:600;color:var(--peach);margin:0 0 18px;">Careers</p>
+      <h1 style="font-family:var(--font-display);font-weight:var(--disp-wt);letter-spacing:var(--disp-tr);font-size:clamp(42px,6.5vw,80px);line-height:.98;margin:0;color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.3);">Build the economy<br>Hawai&#699;i <span style="font-family:var(--font-script);color:var(--peach);font-weight:400;">deserves</span>.</h1>
+      <p style="font-size:clamp(17px,2vw,20px);line-height:1.55;color:#f4e3d4;max-width:54ch;margin:26px 0 0;font-weight:300;">FoundHer is a small, dedicated team doing work that lasts for generations of w&#257;hine founders. When we&#700;re growing, this is where you&#700;ll find our open roles.</p>
+    </div>
+  </section>
+
+  <!-- WHY WORK HERE -->
+  <section data-sec style="background:var(--cream);padding:78px 0;">
+    <div style="max-width:var(--maxw);margin:0 auto;padding:0 26px;">
+      <p style="font-family:var(--font-slab);text-transform:uppercase;letter-spacing:.22em;font-size:13px;font-weight:700;color:var(--clay);margin:0 0 8px;">Why FoundHer</p>
+      <h2 style="font-family:var(--font-display);font-weight:var(--disp-wt);letter-spacing:var(--disp-tr);font-size:clamp(28px,4vw,44px);line-height:1.05;margin:0 0 40px;color:var(--ink);max-width:20ch;">Mission-driven work, grounded in community.</h2>
+      <div data-valgrid style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;">
+        <sc-for list="{{ values }}" as="v" hint-placeholder-count="3">
+          <div style="background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px;">
+            <h3 style="font-family:var(--font-display);font-weight:700;font-size:20px;margin:0 0 12px;color:var(--clay);">{{ v.title }}</h3>
+            <p style="font-size:15px;line-height:1.6;color:var(--muted);margin:0;font-weight:400;">{{ v.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPEN POSITIONS -->
+  <section data-sec style="background:linear-gradient(rgba(255,239,221,.7),rgba(255,239,221,.7)),var(--tex-cream);background-size:cover;background-position:center;padding:78px 0;">
+    <div style="max-width:var(--maxw);margin:0 auto;padding:0 26px;">
+      <div style="display:flex;align-items:baseline;gap:16px;margin:0 0 32px;">
+        <h2 style="font-family:var(--font-display);font-weight:var(--disp-wt);letter-spacing:var(--disp-tr);font-size:clamp(28px,4vw,44px);line-height:1;margin:0;color:var(--ink);">Open Positions</h2>
+        <span style="font-family:var(--font-display);font-weight:700;font-size:15px;color:#fff;background:var(--clay);border-radius:999px;padding:5px 14px;">{{ openCount }} open</span>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <sc-for list="{{ jobs }}" as="j" hint-placeholder-count="1">
+          <a href="{{ j.href }}" data-jobcard style="text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:32px 34px;display:flex;align-items:center;justify-content:space-between;gap:28px;box-shadow:0 14px 36px -28px rgba(58,31,22,.4);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;" style-hover="transform:translateY(-3px);box-shadow:0 22px 48px -26px rgba(58,31,22,.5);border-color:var(--clay)">
+            <div style="flex:1;min-width:0;">
+              <h3 style="font-family:var(--font-display);font-weight:800;letter-spacing:var(--disp-tr);font-size:clamp(22px,2.6vw,30px);line-height:1.05;margin:0 0 12px;color:var(--ink);">{{ j.title }}</h3>
+              <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;">
+                <sc-for list="{{ j.tags }}" as="tg" hint-placeholder-count="3">
+                  <span style="background:var(--blush);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:12.5px;font-weight:600;color:var(--ink);">{{ tg }}</span>
+                </sc-for>
+              </div>
+              <p style="font-size:15.5px;line-height:1.55;color:var(--muted);margin:0;font-weight:400;max-width:64ch;">{{ j.blurb }}</p>
+            </div>
+            <span data-jobcta style="flex:none;background:var(--clay);color:#fff;font-family:var(--font-display);font-weight:700;padding:14px 28px;border-radius:999px;font-size:15px;white-space:nowrap;">View Role &rarr;</span>
+          </a>
+        </sc-for>
+      </div>
+
+      <!-- GENERAL INTEREST -->
+      <div style="margin-top:24px;background:transparent;border:1.5px dashed rgba(182,90,62,.4);border-radius:var(--radius);padding:30px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;">
+        <div>
+          <h3 style="font-family:var(--font-display);font-weight:700;font-size:20px;margin:0 0 4px;color:var(--ink);">Don&#700;t see your role?</h3>
+          <p style="font-size:15px;color:var(--muted);margin:0;font-weight:400;max-width:52ch;">We&#700;re a growing organization. If you believe in the mission and have something to offer, we&#700;d love to hear from you.</p>
+        </div>
+        <a href="{{ generalHref }}" style="text-decoration:none;background:transparent;border:1.5px solid var(--clay);color:var(--clay);font-family:var(--font-display);font-weight:700;padding:13px 28px;border-radius:999px;font-size:15px;white-space:nowrap;" style-hover="background:var(--clay);color:#fff">Introduce Yourself</a>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="FoundHer Footer" hint-size="100%,380px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  renderVals() {
+    const general = 'mailto:keanu@purplemaia.org,darien@purplemaia.org,nicole@purplemaia.org'
+      + '?subject=' + encodeURIComponent('General Interest: Hawaiʻi FoundHer');
+    const jobs = [
+      {
+        title: 'Executive Director',
+        href: 'executive-director.html',
+        tags: ['Full-time', 'Honolulu, HI', '$120,000 / yr'],
+        blurb: 'Lead FoundHer as its first Executive Director following independent 501(c)(3) status, driving fundraising, partnerships, and program leadership for w\u0101hine founders across the pae \u02bb\u0101ina.',
+      },
+    ];
+    return {
+      jobs,
+      openCount: jobs.length,
+      generalHref: general,
+      values: [
+        { title: 'Work that lasts', body: 'Since 2021, FoundHer founders have grown revenue at five times the rate of comparable U.S. small businesses. You\u2019ll build the systems that keep that going for generations.' },
+        { title: 'A hands-on team', body: 'We\u2019re small and dedicated. Everyone here is both a strategic leader and an active implementer, so your work has direct, visible impact.' },
+        { title: 'Culturally grounded', body: 'We center community over institution and lead with hum\u012blity. We take data seriously and use it to tell honest stories about impact.' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

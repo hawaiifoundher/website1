@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html data-theme="modern">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@200;300;400;500;600;700&family=Yellowtail&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+  body{margin:0;}
+  :root{
+    --espresso:#c36a4e; --espresso-2:#b65a3e; --deep:#984b34;
+    --clay:#b65a3e; --clay-2:#c36a4e; --coral:#c36a4e;
+    --cream:#ffefdd; --blush:#fbe7d2; --peach:#fed5a7; --sand:#f7e3cc; --card:#fff8ee;
+    --ink:#3a1f16; --muted:#8a6f5e; --on-dark:#ffefdd; --on-dark-muted:#e6c7ad;
+    --line:#f0dcc6; --line-dark:rgba(255,239,221,.15);
+    --font-display:'Baloo 2',system-ui,sans-serif;
+    --font-slab:'Zilla Slab',Georgia,serif;
+    --font-body:'Montserrat',system-ui,sans-serif;
+    --font-script:'Yellowtail',cursive;
+    --disp-wt:800; --disp-tr:-0.01em; --radius:18px; --maxw:1180px;
+    --tex-clay:url('assets/texture-clay.jpg');
+    --tex-cream:url('assets/texture-cream.jpg');
+    --tex-coral:url('assets/texture-coral.jpg');
+  }
+  :root[data-theme="editorial"]{ --font-display:'Zilla Slab',Georgia,serif; --disp-wt:700; --disp-tr:-0.005em; --radius:4px; }
+  :root[data-theme="modern"]{ --font-display:'Montserrat',system-ui,sans-serif; --disp-wt:800; --disp-tr:-0.025em; --radius:10px; }
+  ::selection{background:var(--clay);color:#fff;}
+  a{color:inherit;}
+  @media(max-width:640px){ [data-sec]{padding-top:62px!important;padding-bottom:62px!important;} }
+  @media(max-width:760px){ [data-respgrid]{grid-template-columns:1fr!important;} [data-skillgrid]{grid-template-columns:1fr!important;} [data-rolehead]{flex-direction:column!important;align-items:flex-start!important;} }
+</style>
+</helmet>
+
+<div style="font-family:var(--font-body);color:var(--ink);background:var(--cream);min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden;">
+
+  <dc-import name="FoundHer Nav" active="careers" hint-size="100%,72px"></dc-import>
+
+  <!-- HERO -->
+  <section data-sec style="background:var(--clay);color:var(--on-dark);padding:72px 0;">
+    <div style="max-width:var(--maxw);margin:0 auto;padding:0 26px;">
+      <a href="careers.html" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:var(--peach);font-family:var(--font-display);font-weight:700;font-size:14px;margin:0 0 20px;" style-hover="color:#fff">&larr; All Open Roles</a>
+      <p style="font-family:var(--font-slab);text-transform:uppercase;letter-spacing:.26em;font-size:13px;font-weight:600;color:var(--peach);margin:0 0 14px;">Careers</p>
+      <h1 style="font-family:var(--font-display);font-weight:var(--disp-wt);letter-spacing:var(--disp-tr);font-size:clamp(38px,5.5vw,64px);line-height:1.0;margin:0;color:#fff;">Executive Director</h1>
+      <p style="font-size:clamp(17px,2vw,19px);line-height:1.55;color:#f4e3d4;max-width:58ch;margin:22px 0 0;font-weight:300;">In 2026, FoundHer became an independent 501(c)(3). This is a founding moment, and we&#700;re looking for the leader who will carry it forward for generations of w&#257;hine founders.</p>
+    </div>
+  </section>
+
+  <!-- ROLE HEADER + APPLY -->
+  <section data-sec style="background:var(--cream);padding:64px 0 32px;">
+    <div style="max-width:var(--maxw);margin:0 auto;padding:0 26px;">
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px 34px;box-shadow:0 18px 44px -30px rgba(58,31,22,.4);">
+        <div data-rolehead style="display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;">
+          <div style="display:flex;flex-wrap:wrap;gap:10px;">
+            <sc-for list="{{ terms }}" as="t" hint-placeholder-count="4">
+              <div style="background:var(--blush);border:1px solid var(--line);border-radius:999px;padding:9px 18px;display:flex;align-items:center;gap:9px;">
+                <span style="font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:600;">{{ t.k }}</span>
+                <span style="font-family:var(--font-display);font-weight:700;font-size:14px;color:var(--ink);">{{ t.v }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <a href="{{ applyHref }}" style="text-decoration:none;background:var(--clay);color:#fff;font-family:var(--font-display);font-weight:700;padding:15px 32px;border-radius:999px;font-size:16px;white-space:nowrap;flex:none;" style-hover="background:var(--clay-2)">Apply Now</a>
+        </div>
+        <p style="font-size:15px;color:var(--muted);margin:22px 0 0;font-weight:400;">Reports to the Hawai&#699;i FoundHer Board of Directors</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT + THE ROLE -->
+  <section data-sec style="background:var(--cream);padding:32px 0 24px;">
+    <div style="max-width:var(--maxw);margin:0 auto;padding:0 26px;">
+      <p style="font-family:var(--font-slab);text-transform:uppercase;letter-spacing:.22em;font-size:13px;font-weight:700;color:var(--clay);margin:0 0 16px;">The Role</p>
+      <p style="font-size:19px;line-height:1.6;color:var(--ink);margin:0 0 18px;font-weight:400;max-width:72ch;">The Executive Director is responsible for the overall leadership, operations, and sustainability of Hawai&#699;i FoundHer. The majority of the time will be spent fundraising and building community partnerships.</p>
+      <p style="font-size:16.5px;line-height:1.65;color:var(--muted);margin:0 0 16px;font-weight:400;max-width:72ch;">Reporting to the Board of Directors, the ED ensures the organization enacts its mission, manages day-to-day program operations, builds and maintains a strong funding base, and serves as FoundHer&#700;s primary external voice.</p>
+      <p style="font-size:16.5px;line-height:1.65;color:var(--muted);margin:0;font-weight:400;max-width:72ch;">This is a hands-on leadership role. FoundHer operates with a small, dedicated team, which means the ED is both strategic leader and active implementer.</p>
+
+      <p style="font-family:var(--font-slab);text-transform:uppercase;letter-spacing:.22em;font-size:13px;font-weight:700;color:var(--clay);margin:40px 0 16px;">Who We&#700;re Looking For</p>
+      <p style="font-size:19px;line-height:1.55;color:var(--ink);margin:0 0 18px;font-weight:500;max-width:72ch;">FoundHer is a culturally grounded organization. The right candidate doesn&#700;t just understand this mission intellectually, they embody it.</p>
+      <p style="font-size:16.5px;line-height:1.65;color:var(--muted);margin:0 0 16px;font-weight:400;max-width:72ch;">They operate with humility, center community over institution, and lead by bringing people in rather than directing from above. They are comfortable in a boardroom and in a community gathering. They take data seriously and use it to tell honest stories about impact.</p>
+      <p style="font-size:16.5px;line-height:1.65;color:var(--muted);margin:0 0 20px;font-weight:400;max-width:72ch;">If you come from outside the Native Hawaiian community, we expect you to name that honestly, lead with h&#257;&#699;ah&#257;&#699;, and demonstrate a track record of being accountable to and learning from indigenous communities.</p>
+      <p style="font-size:17px;line-height:1.6;color:var(--ink);margin:0;font-weight:500;font-style:italic;font-family:var(--font-slab);border-left:3px solid var(--clay);padding-left:18px;max-width:70ch;">This is a role for someone who is energized, not overwhelmed, by the challenge of building something lasting.</p>
+    </div>
+  </section>
+
+  <!-- KEY RESPONSIBILITIES -->
+  <section data-sec style="background:var(--cream);border-top:1px solid var(--line);padding:72px 0;">
+    <div style="max-width:var(--maxw);margin:0 auto;padding:0 26px;">
+      <p style="font-family:var(--font-slab);text-transform:uppercase;letter-spacing:.22em;font-size:13px;font-weight:700;color:var(--clay);margin:0 0 8px;">Key Responsibilities</p>
+      <h2 style="font-family:var(--font-display);font-weight:var(--disp-wt);letter-spacing:var(--disp-tr);font-size:clamp(28px,4vw,42px);line-height:1.05;margin:0 0 40px;color:var(--ink);max-width:20ch;">Four areas of leadership.</h2>
+      <div data-respgrid style="display:grid;grid-template-columns:repeat(2,1fr);gap:18px;">
+        <sc-for list="{{ responsibilities }}" as="r" hint-placeholder-count="4">
+          <div style="background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px;">
+            <div style="font-family:var(--font-display);font-weight:700;font-size:14px;line-height:1;color:var(--clay);letter-spacing:.06em;">{{ r.n }}</div>
+            <h3 style="font-family:var(--font-display);font-weight:700;font-size:21px;margin:10px 0 16px;color:var(--ink);">{{ r.title }}</h3>
+            <div style="display:flex;flex-direction:column;gap:11px;">
+              <sc-for list="{{ r.items }}" as="it" hint-placeholder-count="3">
+                <div style="display:flex;gap:11px;align-items:baseline;font-size:14.5px;color:var(--muted);font-weight:400;line-height:1.5;"><span style="color:var(--clay);flex:none;font-size:11px;">&#9670;</span><span>{{ it }}</span></div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS & EXPERIENCE -->
+  <section data-sec style="background:var(--cream);padding:72px 0;">
+    <div style="max-width:var(--maxw);margin:0 auto;padding:0 26px;">
+      <p style="font-family:var(--font-slab);text-transform:uppercase;letter-spacing:.22em;font-size:13px;font-weight:700;color:var(--clay);margin:0 0 8px;">Skills &amp; Experience</p>
+      <h2 style="font-family:var(--font-display);font-weight:var(--disp-wt);letter-spacing:var(--disp-tr);font-size:clamp(28px,4vw,42px);line-height:1.05;margin:0 0 40px;color:var(--ink);">What you bring.</h2>
+      <div data-skillgrid style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;">
+        <div>
+          <div style="display:inline-block;background:var(--clay);color:#fff;font-family:var(--font-display);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.12em;padding:7px 16px;border-radius:999px;margin-bottom:22px;">Required</div>
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <sc-for list="{{ required }}" as="rq" hint-placeholder-count="5">
+              <div style="display:flex;gap:13px;align-items:flex-start;font-size:15.5px;color:var(--ink);font-weight:400;line-height:1.55;"><span style="color:var(--clay);flex:none;font-weight:700;">&#10003;</span><span>{{ rq }}</span></div>
+            </sc-for>
+          </div>
+        </div>
+        <div>
+          <div style="display:inline-block;background:var(--blush);color:var(--clay);border:1px solid var(--line);font-family:var(--font-display);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.12em;padding:7px 16px;border-radius:999px;margin-bottom:22px;">Preferred</div>
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <sc-for list="{{ preferred }}" as="pf" hint-placeholder-count="5">
+              <div style="display:flex;gap:13px;align-items:flex-start;font-size:15.5px;color:var(--muted);font-weight:400;line-height:1.55;"><span style="color:var(--peach);flex:none;font-weight:700;">&#9656;</span><span>{{ pf }}</span></div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLY CTA -->
+  <section data-sec style="background:var(--cream);padding:80px 0;">
+    <div style="max-width:var(--maxw);margin:0 auto;padding:0 26px;">
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:48px 40px;text-align:center;">
+        <h2 style="font-family:var(--font-display);font-weight:var(--disp-wt);letter-spacing:var(--disp-tr);font-size:clamp(28px,4vw,40px);line-height:1.05;margin:0 0 14px;color:var(--ink);">Ready to lead FoundHer?</h2>
+        <p style="font-size:17px;line-height:1.6;color:var(--muted);max-width:52ch;margin:0 auto 30px;font-weight:400;">Send your r&#233;sum&#233; and a note about why this work matters to you. We review applications on a rolling basis.</p>
+        <a href="{{ applyHref }}" style="text-decoration:none;background:var(--clay);color:#fff;font-family:var(--font-display);font-weight:700;padding:16px 38px;border-radius:999px;font-size:17px;display:inline-block;" style-hover="background:var(--clay-2)">Apply for Executive Director</a>
+        <p style="font-size:14px;color:var(--muted);margin:20px 0 0;font-weight:400;">Or email us directly at <a href="{{ applyHref }}" style="color:var(--clay);text-decoration:underline;text-underline-offset:2px;">keanu@purplemaia.org</a></p>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="FoundHer Footer" hint-size="100%,380px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  renderVals() {
+    const apply = 'mailto:keanu@purplemaia.org,darien@purplemaia.org,nicole@purplemaia.org'
+      + '?subject=' + encodeURIComponent('Executive Director Application: Hawaiʻi FoundHer');
+    return {
+      applyHref: apply,
+      terms: [
+        { k: 'Type', v: 'Full-time' },
+        { k: 'Status', v: 'At-will' },
+        { k: 'Salary', v: '$120,000 / yr' },
+        { k: 'Benefits', v: 'Medical, Dental, 401(k)' },
+      ],
+      responsibilities: [
+        { n: '01', title: 'Fundraising & Sustainability', items: [
+          'Design and execute a fundraising strategy that maintains solvency and builds toward a six-month operating runway across grants, donors, sponsors, and partnerships.',
+          'Write or oversee grant proposals, ensure compliance, and steward existing funder relationships with care.',
+          'Identify and cultivate new funding aligned with FoundHer\u2019s mission, constituency, and program stage.',
+          'Work with the Board to engage donors and build a sustainable individual giving program.' ] },
+        { n: '02', title: 'Partnerships & Community Engagement', items: [
+          'Build and sustain relationships with funders, investors, mentors, and industry leaders who share FoundHer\u2019s values.',
+          'Serve as FoundHer\u2019s primary spokesperson and advocate for NHPIAA w\u0101hine entrepreneurs locally, regionally, and nationally.',
+          'Collaborate with partners on research, policy advocacy, and efforts that uplift w\u0101hine founders.',
+          'Cultivate an engaged alumna network supporting peer learning and capital-raising.' ] },
+        { n: '03', title: 'Program Leadership & Development', items: [
+          'Lead strategic planning to advance FoundHer\u2019s accelerator programs and community engagement work.',
+          'Oversee cohort selection, curriculum design, and implementation for a culturally responsive, empowering experience.',
+          'Use data to demonstrate and communicate program impact to funders, partners, and the public.',
+          'Direct marketing, communications, and outreach; delegate execution to staff and contractors.' ] },
+        { n: '04', title: 'Organizational Management', items: [
+          'Manage day-to-day operations, budgets, and funder reporting.',
+          'Lead and support a small team; recruit and onboard new members as the organization grows.',
+          'Work closely with the Board, providing regular updates and engaging members in fundraising and governance.',
+          'Build organizational systems and documentation that support continuity, accountability, and long-term health.' ] },
+      ],
+      required: [
+        'Proven fundraising track record across at least two of: foundation grants, government grants, individual donors, or corporate partnerships. Grant writing experience is required.',
+        'Organizational leadership experience: you have founded and operated a business yourself, OR led a nonprofit including staff, budget, and board management.',
+        'Strong community-building skills: the ability to build trust, convene diverse stakeholders, and sustain relationships over time.',
+        'Deep commitment to FoundHer\u2019s mission of economic sovereignty for NHPIAA women, indigenous cultural grounding, and community-centered leadership.',
+        'Clear, compelling written and verbal communication for audiences from funders and policymakers to founders and community members.',
+      ],
+      preferred: [
+        'Knowledge of Hawaiian culture, values, and community, or a history of working within and remaining accountable to Native Hawaiian communities.',
+        'Experience designing or facilitating business curriculum, cohort programs, or adult professional education.',
+        'Familiarity with Hawai\u02bbi\u2019s funding landscape: OHA, Kamehameha Schools, Hawai\u02bbi Community Foundation, and federal sources such as ANA and USDA.',
+        'Experience standing up or growing a nonprofit, launching a new program track, or leading an organizational transition.',
+        'Direct entrepreneurial experience: you have started and operated a business yourself, giving you firsthand credibility with FoundHer\u2019s founders.',
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

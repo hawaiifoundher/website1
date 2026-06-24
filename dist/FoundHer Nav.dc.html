@@ -45,6 +45,7 @@
         <a href="program.html" style="{{ programStyle }}">The Program</a>
         <a href="ohana.html" style="{{ ohanaStyle }}">Our &#699;Ohana</a>
         <a href="faqs.html" style="{{ faqStyle }}">FAQs</a>
+        <a href="careers.html" style="{{ careersStyle }}">Careers</a>
         <a href="contact.html" style="{{ contactStyle }}">Contact</a>
         <a href="https://secure.givelively.org/donate/foundher/building-businesses-that-build-community" target="_blank" rel="noopener" style="text-decoration:none;background:var(--peach);color:#3a1f16;font-weight:700;padding:11px 22px;border-radius:999px;font-family:var(--font-display);white-space:nowrap;">Donate Now</a>
       </nav>
@@ -55,16 +56,16 @@
         <a href="program.html" onClick="{{ closeNav }}" style="text-decoration:none;color:var(--on-dark);padding:13px 4px;border-bottom:1px solid var(--line-dark);font-size:16px;">The Program</a>
         <a href="ohana.html" onClick="{{ closeNav }}" style="text-decoration:none;color:var(--on-dark);padding:13px 4px;border-bottom:1px solid var(--line-dark);font-size:16px;">Our &#699;Ohana</a>
         <a href="faqs.html" onClick="{{ closeNav }}" style="text-decoration:none;color:var(--on-dark);padding:13px 4px;border-bottom:1px solid var(--line-dark);font-size:16px;">FAQs</a>
+        <a href="careers.html" onClick="{{ closeNav }}" style="text-decoration:none;color:var(--on-dark);padding:13px 4px;border-bottom:1px solid var(--line-dark);font-size:16px;">Careers</a>
         <a href="contact.html" onClick="{{ closeNav }}" style="text-decoration:none;color:var(--on-dark);padding:13px 4px;border-bottom:1px solid var(--line-dark);font-size:16px;">Contact</a>
         <a href="https://secure.givelively.org/donate/foundher/building-businesses-that-build-community" target="_blank" rel="noopener" onClick="{{ closeNav }}" style="text-decoration:none;margin-top:12px;text-align:center;background:var(--peach);color:#3a1f16;font-weight:700;padding:13px;border-radius:999px;font-family:var(--font-display);">Donate Now</a>
       </div>
     </sc-if>
   </header>
 
-  </div>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:80},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;program&quot;,&quot;ohana&quot;,&quot;faqs&quot;,&quot;contact&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:80},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;program&quot;,&quot;ohana&quot;,&quot;faqs&quot;,&quot;careers&quot;,&quot;contact&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
 class Component extends DCLogic {
   constructor(props) {
     super(props);
@@ -98,6 +99,7 @@ class Component extends DCLogic {
       programStyle: active === 'program' ? act : base,
       ohanaStyle: active === 'ohana' ? act : base,
       faqStyle: active === 'faqs' ? act : base,
+      careersStyle: active === 'careers' ? act : base,
       contactStyle: active === 'contact' ? act : base,
     };
   }
