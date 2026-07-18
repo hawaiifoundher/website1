@@ -85,7 +85,7 @@
       <p style="font-family:var(--font-slab);text-transform:uppercase;letter-spacing:.22em;font-size:13px;font-weight:700;color:var(--clay);margin:40px 0 16px;">Who We&#700;re Looking For</p>
       <p style="font-size:19px;line-height:1.55;color:var(--ink);margin:0 0 18px;font-weight:500;max-width:72ch;">FoundHer is a culturally grounded organization. The right candidate doesn&#700;t just understand this mission intellectually, they embody it.</p>
       <p style="font-size:16.5px;line-height:1.65;color:var(--muted);margin:0 0 16px;font-weight:400;max-width:72ch;">They operate with humility, center community over institution, and lead by bringing people in rather than directing from above. They are comfortable in a boardroom and in a community gathering. They take data seriously and use it to tell honest stories about impact.</p>
-      <p style="font-size:16.5px;line-height:1.65;color:var(--muted);margin:0 0 20px;font-weight:400;max-width:72ch;">If you come from outside the Native Hawaiian community, we expect you to name that honestly, lead with h&#257;&#699;ah&#257;&#699;, and demonstrate a track record of being accountable to and learning from indigenous communities.</p>
+      <p style="font-size:16.5px;line-height:1.65;color:var(--muted);margin:0 0 20px;font-weight:400;max-width:72ch;">Candidates must demonstrate an ability to build trust and credibility within the Native Hawaiian community, as evidenced by established relationships, cultural competency, and a track record of being accountable to and learning from indigenous communities.</p>
       <p style="font-size:17px;line-height:1.6;color:var(--ink);margin:0;font-weight:500;font-style:italic;font-family:var(--font-slab);border-left:3px solid var(--clay);padding-left:18px;max-width:70ch;">This is a role for someone who is energized, not overwhelmed, by the challenge of building something lasting.</p>
     </div>
   </section>
@@ -143,7 +143,7 @@
       <div style="background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:48px 40px;text-align:center;">
         <h2 style="font-family:var(--font-display);font-weight:var(--disp-wt);letter-spacing:var(--disp-tr);font-size:clamp(28px,4vw,40px);line-height:1.05;margin:0 0 14px;color:var(--ink);">Ready to lead FoundHer?</h2>
         <p style="font-size:17px;line-height:1.6;color:var(--muted);max-width:52ch;margin:0 auto 30px;font-weight:400;">Send your r&#233;sum&#233; and a note about why this work matters to you. We review applications on a rolling basis.</p>
-        <p style="font-size:17px;color:var(--ink);margin:0;font-weight:500;">Email your application to <a href="{{ mailtoHref }}" style="color:var(--clay);text-decoration:underline;text-underline-offset:2px;font-weight:700;">kokua@foundher.org</a></p>
+        <p style="font-size:17px;color:var(--ink);margin:0;font-weight:500;">Email your application to <a href="{{ mailtoHref }}" style="color:var(--clay);text-decoration:underline;text-underline-offset:2px;font-weight:700;"><span class="__cf_email__" data-cfemail="acc7c3c7d9cdeccac3d9c2c8c4c9de82c3decb">[email&#160;protected]</span></a></p>
       </div>
     </div>
   </section>
@@ -152,7 +152,7 @@
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{}">
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/x-dc" data-dc-script data-props="{}">
 class Component extends DCLogic {
   renderVals() {
     const subject = 'Executive Director Application: Hawaiʻi FoundHer';
@@ -165,6 +165,7 @@ class Component extends DCLogic {
       applyHref: apply,
       mailtoHref: 'mailto:kokua@foundher.org?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body),
       terms: [
+        { k: 'Location', v: 'Hawaiʻi' },
         { k: 'Type', v: 'Full-time' },
         { k: 'Status', v: 'At-will' },
         { k: 'Salary', v: '$120k+ · DOE' },
