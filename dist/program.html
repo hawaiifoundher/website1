@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-theme="modern">
+<html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -133,7 +133,9 @@
         </div>
       </div>
       <div style="margin-top:22px;">
-        <image-slot id="fh-which-program" shape="rounded" radius="16" placeholder="Drop a photo" style="width:100%;aspect-ratio:21/8;box-shadow:0 18px 44px -28px rgba(58,31,22,.5);"></image-slot>
+        <h3 style="font-family:var(--font-display);font-weight:var(--disp-wt);letter-spacing:var(--disp-tr);color:var(--ink);font-size:26px;margin:0 0 6px;">Kapalili Cohort 1</h3>
+        <p style="margin:0 0 20px;font-family:var(--font-body);font-weight:300;color:var(--muted);font-size:15px;line-height:1.5;max-width:640px;">Hear from the wāhine founders building businesses that let them stay — in their own words.</p>
+        <video src="assets/which-program.mp4" controls playsinline style="display:block;width:100%;aspect-ratio:16/9;object-fit:contain;border-radius:16px;box-shadow:0 18px 44px -28px rgba(58,31,22,.5);background:#000;"></video>
       </div>
     </div>
   </section>
@@ -209,7 +211,7 @@
   <section data-sec="" style="background:linear-gradient(rgba(255,239,221,.7),rgba(255,239,221,.7)),var(--tex-cream);background-size:cover;background-position:center;padding:92px 0;">
     <div style="max-width:var(--maxw);margin:0 auto;padding:0 26px;">
       <p style="font-family:var(--font-slab);text-transform:uppercase;letter-spacing:.2em;font-size:13px;font-weight:700;color:var(--clay);margin:0 0 26px;">Our Team</p>
-      <div data-teamgrid="" style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;">
+      <div data-teamgrid="" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;">
         <sc-for list="{{ team }}" as="t" hint-placeholder-count="4">
           <div style="background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;">
             <image-slot id="{{ t.id }}" shape="circle" placeholder="Photo" style="width:78px;height:78px;flex:none;"></image-slot>
@@ -251,8 +253,15 @@
 
 </div>
 </x-dc>
+<template id="__bundler_thumbnail">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#a44a34"/><text x="50" y="50" font-family="Georgia,serif" font-size="34" font-weight="700" fill="#f7ece2" text-anchor="middle" dominant-baseline="central">FH</text></svg>
+</template>
 <script type="text/x-dc" data-dc-script data-props="{}">
 class Component extends DCLogic {
+  componentDidMount() {
+    const v = document.querySelector('video[src*="which-program"]');
+    if (v) v.controls = true;
+  }
   renderVals() {
     return {
       benefits: [
@@ -280,15 +289,14 @@ class Component extends DCLogic {
       ],
       selectSteps: [
         { n: '1', t: 'Applications', d: 'Tell us your story, your business, and what drives you.' },
-        { n: '2', t: 'First Round', d: 'A conversation with the FoundHer team. We want to hear how you think, not just what you\u2019ve built.' },
+        { n: '2', t: 'First Round', d: 'A conversation with the FoundHer team. We want to hear how you think, not just what you’ve built.' },
         { n: '3', t: 'Due Diligence', d: 'We take a closer look at your business, financials, and growth potential.' },
-        { n: '4', t: 'Final Interview', d: 'You meet our selection committee to ensure we\u2019re a good fit.' },
+        { n: '4', t: 'Final Interview', d: 'You meet our selection committee to ensure we’re a good fit.' },
       ],
       team: [
         { id: 'fh-team-1', name: 'Nicole Brodie', role: 'Interim Director', bio: "Nicole brings deep roots in Hawaiʻi's nonprofit and business ecosystem, with a background spanning operations, hospitality, and clean energy. She holds a Master's degree from the University of Hawaiʻi at Mānoa." },
-        { id: 'fh-team-2', name: 'Darien Siguenza', role: 'Program Manager, Pae ʻĀina', bio: 'Darien came to FoundHer from the LA Cleantech Incubator and has been with the program since its founding cohort in 2021, \u201cthis is for women like me.\u201d' },
+        { id: 'fh-team-2', name: 'Darien Siguenza', role: 'Program Manager, Pae ʻĀina', bio: 'Darien came to FoundHer from the LA Cleantech Incubator and has been with the program since its founding cohort in 2021, “this is for women like me.”' },
         { id: 'fh-team-3', name: 'Keanu Wilson', role: 'Program Manager, Kapalili', bio: 'Keanu is a digital artist, entrepreneur, and community builder who leads the Kapalili program on Hawaiʻi Island, supporting wāhine founders in agriculture and food.' },
-        { id: 'fh-team-4', name: 'Jazzy Kealoha', role: 'Marketing Manager', bio: "Jazzy holds an MBA with a background in anthropology, psychology, and marketing. For her, branding isn't about visuals, it's the whole system: the feeling, the story, the culture." },
       ],
       timeline: [
         { y: '2021', t: 'Pilot cohort launched' },
